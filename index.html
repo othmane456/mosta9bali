@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مستقبلي — منصة تعليمية مغربية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="icon" href="logo1.png">
+<style>
+/* ══════════════════════════════════════════════════════════════════════════
+   MOSTA9BALI — GOOGLE SHEETS EDITION v4.0
+   Live CSV Backend · RTL · Deep Crystal Glassmorphism
+   ══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --bg-void: #020617;
+  --glass-base: rgba(14,21,38,0.55);
+  --glass-hover: rgba(24,35,58,0.70);
+  --glass-border: rgba(255,255,255,0.07);
+  --glass-border-bright: rgba(255,255,255,0.13);
+
+  --cyan: #06b6d4;
+  --cyan-dim: rgba(6,182,212,0.12);
+  --cyan-glow: rgba(6,182,212,0.30);
+  --indigo: #6366f1;
+  --indigo-dim: rgba(99,102,241,0.12);
+  --emerald: #10b981;
+  --emerald-dim: rgba(16,185,129,0.12);
+  --amber: #f59e0b;
+  --amber-dim: rgba(245,158,11,0.12);
+  --rose: #fb7185;
+  --rose-dim: rgba(251,113,133,0.12);
+  --violet: #5c26fdb0;
+  --violet-dim: rgba(167,139,250,0.12);
+
+  --text-1: #f1f5f9;
+  --text-2: #94a3b8;
+  --text-3: #475569;
+
+  --font-ar: 'Readex Pro','Cairo',sans-serif;
+  --font-en: 'Plus Jakarta Sans',sans-serif;
+
+  --radius-2xl: 24px;
+  --radius-xl: 20px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+
+  --nav-h: 68px;
+  --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
+  --ease-out: cubic-bezier(0.22,1,0.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:var(--font-ar);
+  background:var(--bg-void);
+  color:var(--text-1);
+  min-height:100vh;
+  overflow-x:hidden;
+  direction:rtl;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.09);border-radius:10px}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.18)}
+
+/* ── MESH BACKGROUND ── */
+.mesh-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.mesh-bg::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 90% 60% at 50% 110%,rgba(6,182,212,0.07),transparent 65%);
+}
+.mesh-orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:0.16;will-change:transform}
+.mesh-orb:nth-child(1){width:820px;height:820px;background:radial-gradient(circle,var(--cyan),transparent 68%);top:-260px;left:-200px;animation:orb1 24s ease-in-out infinite alternate}
+.mesh-orb:nth-child(2){width:700px;height:700px;background:radial-gradient(circle,var(--indigo),transparent 68%);bottom:-140px;right:-160px;animation:orb2 30s ease-in-out infinite alternate;animation-delay:-8s}
+.mesh-orb:nth-child(3){width:560px;height:560px;background:radial-gradient(circle,var(--emerald),transparent 68%);top:38%;left:28%;animation:orb3 26s ease-in-out infinite alternate;animation-delay:-14s}
+.mesh-orb:nth-child(4){width:420px;height:420px;background:radial-gradient(circle,var(--amber),transparent 68%);top:62%;right:18%;opacity:0.10;animation:orb4 32s ease-in-out infinite alternate;animation-delay:-6s}
+@keyframes orb1{0%{transform:translate(0,0) scale(1)}50%{transform:translate(80px,55px) scale(1.09)}100%{transform:translate(35px,90px) scale(1.14)}}
+@keyframes orb2{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-65px,-45px) scale(1.11)}100%{transform:translate(-28px,65px) scale(1.06)}}
+@keyframes orb3{0%{transform:translate(0,0) scale(1) rotate(0deg)}50%{transform:translate(55px,-35px) scale(1.13) rotate(4deg)}100%{transform:translate(-42px,45px) scale(0.94) rotate(-5deg)}}
+@keyframes orb4{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-55px,-65px) scale(1.22)}}
+
+/* ── AMBIENT OVERLAY ── */
+.ambient-overlay{position:fixed;inset:0;z-index:900;background:rgba(0,0,0,0.94);pointer-events:none;opacity:0;transition:opacity 0.45s ease}
+.ambient-overlay.active{opacity:1}
+
+/* ── NAVBAR ── */
+.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;padding:0 28px;
+  background:linear-gradient(180deg,rgba(2,6,23,0.92) 0%,rgba(2,6,23,0.85) 100%);
+  border-bottom:1px solid rgba(255,255,255,0.055);
+  backdrop-filter:blur(32px) saturate(180%);
+  -webkit-backdrop-filter:blur(32px) saturate(180%);
+  box-shadow:0 1px 0 rgba(255,255,255,0.03),0 4px 28px rgba(0,0,0,0.28);
+  transition:all 0.3s ease;
+}
+.navbar.scrolled{background:rgba(2,6,23,0.97);border-bottom-color:rgba(6,182,212,0.09);box-shadow:0 1px 0 rgba(255,255,255,0.05),0 8px 40px rgba(0,0,0,0.48)}
+.navbar::after{content:'';position:absolute;bottom:0;left:8%;right:8%;height:1px;background:linear-gradient(90deg,transparent,rgba(6,182,212,0.28),transparent);opacity:0;transition:opacity 0.4s ease}
+.navbar:hover::after{opacity:1}
+.nav-logo{display:flex;align-items:center;gap:13px;cursor:pointer;user-select:none;text-decoration:none}
+.nav-logo-hex{width:42px;height:42px;border-radius:12px;background:var(--cyan-dim);border:1px solid rgba(6,182,212,0.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.5s var(--ease-spring)}
+.nav-logo:hover .nav-logo-hex{transform:rotate(45deg) scale(1.1);filter:drop-shadow(0 0 10px rgba(6,182,212,0.4))}
+.nav-brand{line-height:1.15}
+.nav-brand-ar{font-family:var(--font-ar);font-size:15px;font-weight:700;color:var(--text-1);letter-spacing:-0.3px}
+.nav-brand-en{font-family:var(--font-en);font-size:10.5px;font-weight:700;color:var(--cyan);letter-spacing:1.6px;text-transform:uppercase}
+.nav-socials{display:flex;align-items:center;gap:8px}
+.social-btn{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.045);border:1px solid var(--glass-border);color:var(--text-2);font-size:13.5px;cursor:pointer;transition:all 0.22s ease;text-decoration:none;will-change:transform}
+.social-btn:hover{background:rgba(255,255,255,0.09);color:var(--text-1);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,0.3)}
+.social-btn.tg:hover{box-shadow:0 0 16px rgba(37,99,235,0.38);color:#60a5fa;border-color:rgba(96,165,250,0.25)}
+.social-btn.wa:hover{box-shadow:0 0 16px rgba(16,185,129,0.38);color:#34d399;border-color:rgba(52,211,153,0.25)}
+.social-btn.ig:hover{box-shadow:0 0 16px rgba(244,63,94,0.38);color:#fb7185;border-color:rgba(251,113,133,0.25)}
+.social-btn:active{transform:scale(0.91)}
+
+/* ── LAYOUT ── */
+.main-wrap{position:relative;z-index:1;padding-top:var(--nav-h);min-height:100vh}
+.container{max-width:1440px;margin:0 auto;padding:0 24px}
+
+/* ── BREADCRUMB ── */
+.breadcrumb-bar{padding:16px 24px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.bc-sep{color:var(--text-3);font-size:9px}
+.bc-item{font-size:12.5px;color:var(--text-3);cursor:pointer;transition:color 0.2s}
+.bc-item:hover{color:var(--cyan)}
+.bc-current{font-size:12.5px;color:var(--cyan);font-weight:700}
+.back-btn{margin-right:auto;margin-left:0;display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:12px;background:rgba(6,182,212,0.07);border:1px solid rgba(6,182,212,0.18);color:var(--cyan);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.22s ease;user-select:none}
+.back-btn:hover{background:rgba(6,182,212,0.14);border-color:rgba(6,182,212,0.38)}
+.back-btn:active{transform:scale(0.95)}
+
+/* ── VIEW TRANSITIONS ── */
+.view{display:none}
+.view.active{display:block;animation:viewIn 0.38s var(--ease-out) both}
+@keyframes viewIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── GLOBAL LOADER ── */
+.global-loader{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(2,6,23,0.97);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
+  transition:opacity 0.5s ease;
+}
+.global-loader.hidden{opacity:0;pointer-events:none}
+.loader-hex{
+  width:64px;height:64px;border-radius:18px;
+  background:var(--cyan-dim);border:1px solid rgba(6,182,212,0.3);
+  display:flex;align-items:center;justify-content:center;
+  animation:loaderPulse 1.4s ease-in-out infinite;
+}
+@keyframes loaderPulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(6,182,212,0.3)}50%{transform:scale(1.08);box-shadow:0 0 0 16px rgba(6,182,212,0)}}
+.loader-text{font-size:14px;color:var(--text-2);font-weight:500;letter-spacing:0.5px}
+.loader-bar-wrap{width:200px;height:3px;background:rgba(255,255,255,0.07);border-radius:99px;overflow:hidden}
+.loader-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--cyan),var(--indigo));border-radius:99px;transition:width 0.4s ease;animation:loaderBarAnim 2s ease-in-out infinite}
+@keyframes loaderBarAnim{0%{width:0%;margin-right:100%}50%{width:60%;margin-right:0%}100%{width:0%;margin-right:0%}}
+
+/* ── ERROR BANNER ── */
+.error-banner{
+  margin:24px;padding:20px 24px;border-radius:var(--radius-lg);
+  background:var(--rose-dim);border:1px solid rgba(251,113,133,0.25);
+  display:none;align-items:center;gap:14px;
+}
+.error-banner.show{display:flex}
+.error-banner-text{font-size:13.5px;color:var(--rose);line-height:1.6}
+.error-retry{margin-right:auto;padding:8px 18px;border-radius:10px;background:rgba(251,113,133,0.14);border:1px solid rgba(251,113,133,0.3);color:var(--rose);font-size:13px;font-weight:700;cursor:pointer;transition:all 0.2s ease;font-family:var(--font-ar)}
+.error-retry:hover{background:rgba(251,113,133,0.22)}
+
+/* ── SKELETON ── */
+#skeleton-loader{display:none}
+#skeleton-loader.active{display:block}
+.skeleton-wrap{padding:0 24px 40px;display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.skeleton-card{height:164px;border-radius:var(--radius-xl);background:rgba(20,30,50,0.55);position:relative;overflow:hidden}
+.skeleton-card::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 15%,rgba(255,255,255,0.042) 50%,transparent 85%);background-size:200% 100%;animation:shimmer 1.5s infinite}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+
+/* ── HERO ── */
+.hero{padding:64px 24px 52px;text-align:center;position:relative}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;padding:6px 18px;border-radius:100px;background:rgba(99,102,241,0.09);border:1px solid rgba(99,102,241,0.22);font-size:12px;color:#a5b4fc;font-weight:700;letter-spacing:0.4px;margin-bottom:26px;font-family:var(--font-en)}
+.hero-title{font-size:clamp(40px,6.5vw,76px);font-weight:700;line-height:1.08;margin-bottom:20px;letter-spacing:-0.03em}
+.hero-title .gradient-text{background:linear-gradient(135deg,var(--cyan) 0%,var(--indigo) 60%,var(--violet) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(15px,2.2vw,18px);color:var(--text-2);max-width:620px;margin:0 auto 44px;line-height:1.75;font-weight:300}
+.hero-badge-row{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:600;font-family:var(--font-en)}
+.hero-badge.cyan{background:var(--cyan-dim);border:1px solid rgba(6,182,212,0.22);color:var(--cyan)}
+.hero-badge.indigo{background:var(--indigo-dim);border:1px solid rgba(99,102,241,0.22);color:#a5b4fc}
+.hero-badge.emerald{background:var(--emerald-dim);border:1px solid rgba(16,185,129,0.22);color:var(--emerald)}
+
+/* ── SECTION HEADER ── */
+.section-head{padding:34px 24px 22px}
+.section-title{font-size:clamp(22px,3.2vw,34px);font-weight:700;letter-spacing:-0.025em}
+.section-title span{color:var(--cyan)}
+.section-desc{font-size:13.5px;color:var(--text-2);margin-top:6px;font-weight:300;line-height:1.65}
+
+/* ══════════════════════════════════════════════════════════════
+   GLASSMORPHIC CARDS
+   ══════════════════════════════════════════════════════════════ */
+.cards-grid{display:grid;gap:20px;padding:0 24px 44px;perspective:1500px;perspective-origin:50% 40%}
+.cols-3{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.cols-4{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.cols-2{grid-template-columns:repeat(auto-fill,minmax(340px,1fr))}
+.binary-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px;padding:0 24px 44px;perspective:1500px}
+.pdf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;padding:0 24px 44px}
+
+/* Track Card */
+.track-card{
+  border-radius:var(--radius-xl);padding:28px 24px;cursor:pointer;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,rgba(255,255,255,0.052) 0%,rgba(255,255,255,0.012) 100%);
+  border:1px solid rgba(255,255,255,0.10);
+  backdrop-filter:blur(50px) saturate(220%);
+  -webkit-backdrop-filter:blur(50px) saturate(220%);
+  box-shadow:inset 0 1px 2px rgba(255,255,255,0.24),inset 0 -1px 1px rgba(255,255,255,0.05),0 28px 58px rgba(0,0,0,0.58);
+  transform-style:preserve-3d;will-change:transform,box-shadow;
+  transition:transform 0.55s var(--ease-spring),border-color 0.38s ease,box-shadow 0.48s ease;
+  user-select:none;
+  --card-glow:rgba(6,182,212,0.28);--card-border:rgba(6,182,212,0.45);
+}
+.track-card::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.07) 25%,rgba(255,255,255,0.16) 50%,rgba(255,255,255,0.07) 75%,transparent 100%);transform:skewX(-18deg);pointer-events:none;z-index:10;opacity:0;transition:opacity 0.3s ease}
+.track-card::after{content:'';position:absolute;top:0;left:0;right:0;height:48%;background:linear-gradient(180deg,rgba(255,255,255,0.095) 0%,rgba(255,255,255,0.032) 35%,transparent 100%);border-radius:inherit;border-bottom-left-radius:0;border-bottom-right-radius:0;pointer-events:none;z-index:1;opacity:0.85;transition:opacity 0.38s ease}
+.track-card[data-theme="cyan"]{--card-glow:rgba(6,182,212,0.28);--card-border:rgba(6,182,212,0.5)}
+.track-card[data-theme="indigo"]{--card-glow:rgba(99,102,241,0.28);--card-border:rgba(99,102,241,0.5)}
+.track-card[data-theme="emerald"]{--card-glow:rgba(16,185,129,0.25);--card-border:rgba(16,185,129,0.5)}
+.track-card[data-theme="amber"]{--card-glow:rgba(245,158,11,0.25);--card-border:rgba(245,158,11,0.5)}
+.track-card[data-theme="rose"]{--card-glow:rgba(251,113,133,0.25);--card-border:rgba(251,113,133,0.5)}
+.track-card[data-theme="violet"]{--card-glow:rgba(167,139,250,0.25);--card-border:rgba(167,139,250,0.5)}
+@media(pointer:fine){
+  .track-card:hover{transform:translateY(-12px) scale(1.018) rotateX(6deg) rotateY(-5deg);border-color:var(--card-border);box-shadow:inset 0 2px 3px rgba(255,255,255,0.28),inset 0 -1px 2px rgba(255,255,255,0.07),0 52px 100px rgba(0,0,0,0.64),0 20px 40px rgba(0,0,0,0.32),0 0 80px var(--card-glow),0 0 0 1px var(--card-border)}
+  .track-card:hover::before{opacity:1;animation:card-shimmer 1.1s ease-out forwards}
+  .track-card:hover::after{opacity:1}
+}
+@keyframes card-shimmer{0%{left:-100%;opacity:0}8%{opacity:1}100%{left:150%;opacity:0}}
+.track-card:active{transform:translateY(3px) scale(0.963) rotateX(-3deg) rotateY(2deg) !important;box-shadow:inset 0 5px 14px rgba(0,0,0,0.40),inset 0 1px 2px rgba(255,255,255,0.09),0 8px 20px rgba(0,0,0,0.38) !important;transition:transform 0.07s ease,box-shadow 0.07s ease !important;filter:brightness(0.94)}
+
+.card-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:22px;position:relative;z-index:2}
+.card-icon.cyan{background:var(--cyan-dim);color:var(--cyan)}
+.card-icon.indigo{background:var(--indigo-dim);color:var(--indigo)}
+.card-icon.emerald{background:var(--emerald-dim);color:var(--emerald)}
+.card-icon.amber{background:var(--amber-dim);color:var(--amber)}
+.card-icon.rose{background:var(--rose-dim);color:var(--rose)}
+.card-icon.violet{background:var(--violet-dim);color:var(--violet)}
+.card-title{font-size:17px;font-weight:700;margin-bottom:6px;line-height:1.28;letter-spacing:-0.02em;position:relative;z-index:2}
+.card-sub{font-size:13px;color:var(--text-2);font-weight:300;line-height:1.62;position:relative;z-index:2}
+.card-arrow{position:absolute;top:24px;left:20px;color:var(--text-3);font-size:13px;transition:transform 0.22s ease,color 0.22s ease;z-index:2}
+.track-card:hover .card-arrow{transform:translateX(-4px);color:var(--cyan)}
+.card-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:100px;font-size:11px;font-weight:700;margin-top:13px;font-family:var(--font-en);position:relative;z-index:2}
+.badge-cyan{background:var(--cyan-dim);color:var(--cyan);border:1px solid rgba(6,182,212,0.22)}
+.badge-indigo{background:var(--indigo-dim);color:#a5b4fc;border:1px solid rgba(99,102,241,0.22)}
+.badge-emerald{background:var(--emerald-dim);color:var(--emerald);border:1px solid rgba(16,185,129,0.22)}
+.badge-amber{background:var(--amber-dim);color:var(--amber);border:1px solid rgba(245,158,11,0.22)}
+.badge-rose{background:var(--rose-dim);color:var(--rose);border:1px solid rgba(251,113,133,0.22)}
+.badge-violet{background:var(--violet-dim);color:var(--violet);border:1px solid rgba(167,139,250,0.22)}
+
+/* Binary Cards */
+.binary-card{
+  border-radius:var(--radius-xl);padding:38px 30px;cursor:pointer;text-align:center;
+  background:linear-gradient(135deg,rgba(255,255,255,0.048) 0%,rgba(255,255,255,0.010) 100%);
+  border:2px solid rgba(255,255,255,0.09);
+  backdrop-filter:blur(50px) saturate(220%);
+  -webkit-backdrop-filter:blur(50px) saturate(220%);
+  box-shadow:inset 0 1px 2px rgba(255,255,255,0.22),0 28px 60px rgba(0,0,0,0.58);
+  transform-style:preserve-3d;will-change:transform,box-shadow;
+  transition:transform 0.55s var(--ease-spring),border-color 0.38s ease,box-shadow 0.48s ease;
+  user-select:none;position:relative;overflow:hidden;
+}
+.binary-card::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.12),transparent);transform:skewX(-18deg);pointer-events:none;z-index:10;opacity:0;transition:opacity 0.3s ease}
+.binary-card.type-lesson{--bc-glow:rgba(6,182,212,0.28);--bc-border:rgba(6,182,212,0.5)}
+.binary-card.type-exam{--bc-glow:rgba(245,158,11,0.25);--bc-border:rgba(245,158,11,0.5)}
+.binary-card.type-neutral{--bc-glow:rgba(99,102,241,0.25);--bc-border:rgba(99,102,241,0.5)}
+@media(pointer:fine){
+  .binary-card:hover{transform:translateY(-14px) scale(1.016) rotateX(7deg) rotateY(-6deg);border-color:var(--bc-border,rgba(6,182,212,0.5));box-shadow:inset 0 2px 4px rgba(255,255,255,0.30),0 58px 112px rgba(0,0,0,0.68),0 0 100px var(--bc-glow,rgba(6,182,212,0.28))}
+  .binary-card:hover::before{opacity:1;animation:card-shimmer 1.1s ease-out forwards}
+}
+.binary-card:active{transform:translateY(4px) scale(0.958) rotateX(-4deg) rotateY(3deg) !important;box-shadow:inset 0 6px 16px rgba(0,0,0,0.45),0 6px 16px rgba(0,0,0,0.34) !important;transition:transform 0.07s ease !important}
+.bc-icon-wrap{width:74px;height:74px;border-radius:20px;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;font-size:28px;position:relative;z-index:2}
+.type-lesson .bc-icon-wrap{background:var(--cyan-dim);color:var(--cyan)}
+.type-exam .bc-icon-wrap{background:var(--amber-dim);color:var(--amber)}
+.type-neutral .bc-icon-wrap{background:var(--indigo-dim);color:var(--indigo)}
+.bc-title{font-size:21px;font-weight:700;margin-bottom:9px;letter-spacing:-0.02em;position:relative;z-index:2}
+.bc-desc{font-size:13px;color:var(--text-2);line-height:1.65;position:relative;z-index:2}
+
+/* Lessons List */
+.lessons-list{padding:0 24px 44px;display:flex;flex-direction:column;gap:11px}
+.lesson-row{
+  border-radius:var(--radius-lg);padding:18px 22px;cursor:pointer;display:flex;align-items:center;gap:16px;
+  background:linear-gradient(135deg,rgba(255,255,255,0.030) 0%,rgba(255,255,255,0.008) 100%);
+  border:1px solid rgba(255,255,255,0.078);
+  backdrop-filter:blur(40px) saturate(200%);
+  -webkit-backdrop-filter:blur(40px) saturate(200%);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,0.14),0 10px 28px rgba(0,0,0,0.30);
+  transition:transform 0.45s var(--ease-spring),border-color 0.28s ease,box-shadow 0.38s ease,background 0.22s ease;
+  user-select:none;will-change:transform;
+}
+@media(pointer:fine){
+  .lesson-row:hover{transform:translateY(-5px) scale(1.008) rotateX(3deg);border-color:rgba(6,182,212,0.32);background:linear-gradient(135deg,rgba(255,255,255,0.048) 0%,rgba(255,255,255,0.014) 100%);box-shadow:inset 0 1px 2px rgba(255,255,255,0.18),0 22px 52px rgba(0,0,0,0.42),0 0 38px rgba(6,182,212,0.10)}
+}
+.lesson-row:active{transform:translateY(1px) scale(0.984) !important;box-shadow:inset 0 2px 6px rgba(0,0,0,0.24),0 4px 10px rgba(0,0,0,0.18) !important;transition:transform 0.06s ease,box-shadow 0.06s ease !important}
+.lesson-num{font-family:var(--font-en);font-size:11.5px;font-weight:700;color:var(--text-3);min-width:28px}
+.lesson-title{flex:1;font-size:15px;font-weight:600;line-height:1.38}
+.lesson-meta{font-size:12px;color:var(--text-2);display:flex;align-items:center;gap:5px;margin-top:4px}
+.lesson-chevron{color:var(--text-3);font-size:12px;margin-right:auto;margin-left:0;transition:transform 0.22s ease,color 0.22s ease}
+.lesson-row:hover .lesson-chevron{color:var(--cyan);transform:translateX(-3px)}
+
+/* Video Playlist */
+.playlist-container{padding:0 24px 44px;display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:768px){.playlist-container{grid-template-columns:1fr 350px}}
+.playlist-main{display:flex;flex-direction:column;gap:12px}
+.player-wrap{position:relative}
+.player-inner{border-radius:var(--radius-xl);overflow:hidden;position:relative;background:#000;aspect-ratio:16/9}
+.player-inner iframe{width:100%;height:100%;border:none;display:block}
+.player-controls{display:flex;align-items:center;justify-content:space-between;padding:13px 18px}
+.ambient-toggle{display:inline-flex;align-items:center;gap:9px;padding:9px 17px;border-radius:11px;cursor:pointer;background:rgba(255,255,255,0.038);border:1px solid var(--glass-border);color:var(--text-2);font-size:13px;font-weight:600;transition:all 0.22s ease;user-select:none}
+.ambient-toggle:hover{background:rgba(99,102,241,0.10);color:var(--text-1);border-color:rgba(99,102,241,0.28)}
+.ambient-toggle:active{transform:scale(0.95)}
+.ambient-toggle.on{background:rgba(99,102,241,0.14);border-color:rgba(99,102,241,0.45);color:#a5b4fc}
+.player-actions{display:flex;gap:10px;flex-wrap:wrap;padding:0 24px 22px}
+.dl-btn{display:inline-flex;align-items:center;gap:10px;padding:11px 20px;border-radius:13px;cursor:pointer;font-size:13.5px;font-weight:600;font-family:var(--font-ar);transition:all 0.22s ease;user-select:none;border:none;outline:none;will-change:transform}
+.dl-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,0.28)}
+.dl-btn:active{transform:scale(0.94)}
+.dl-btn.pdf{background:rgba(251,113,133,0.09);border:1px solid rgba(251,113,133,0.22);color:var(--rose)}
+.dl-btn.exercise{background:var(--amber-dim);border:1px solid rgba(245,158,11,0.22);color:var(--amber)}
+.video-item{display:flex;align-items:center;gap:13px;padding:13px 16px;border-radius:13px;cursor:pointer;background:linear-gradient(135deg,rgba(255,255,255,0.028) 0%,rgba(255,255,255,0.007) 100%);border:1px solid rgba(255,255,255,0.072);backdrop-filter:blur(30px);box-shadow:inset 0 1px 1px rgba(255,255,255,0.12),0 8px 20px rgba(0,0,0,0.24);transition:transform 0.4s var(--ease-spring),border-color 0.25s ease,box-shadow 0.35s ease;user-select:none}
+@media(pointer:fine){.video-item:hover{transform:translateY(-4px) scale(1.006);border-color:rgba(6,182,212,0.28);box-shadow:inset 0 1px 2px rgba(255,255,255,0.16),0 18px 40px rgba(0,0,0,0.36),0 0 30px rgba(6,182,212,0.09)}}
+.video-item:active{transform:translateY(1px) scale(0.982) !important}
+.video-item.selected{border-color:var(--cyan);background:rgba(6,182,212,0.09)}
+.vi-thumb{width:58px;height:42px;border-radius:9px;background:rgba(5,15,30,0.8);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.vi-title{font-size:13.5px;font-weight:600;flex:1;line-height:1.38}
+.vi-teacher{font-size:11.5px;color:var(--text-2);margin-top:3px}
+.vi-dur{font-family:var(--font-en);font-size:11px;color:var(--text-3);white-space:nowrap}
+
+/* PDF Cards */
+.pdf-card{
+  border-radius:var(--radius-xl);padding:22px;
+  background:linear-gradient(135deg,rgba(255,255,255,0.042) 0%,rgba(255,255,255,0.009) 100%);
+  border:1px solid rgba(255,255,255,0.092);
+  backdrop-filter:blur(50px) saturate(220%);
+  -webkit-backdrop-filter:blur(50px) saturate(220%);
+  box-shadow:inset 0 1px 2px rgba(255,255,255,0.20),0 24px 50px rgba(0,0,0,0.50);
+  display:flex;flex-direction:column;gap:14px;
+  transform-style:preserve-3d;will-change:transform;
+  transition:transform 0.50s var(--ease-spring),border-color 0.35s ease,box-shadow 0.45s ease;
+  --card-glow:rgba(251,113,133,0.18);--card-border:rgba(251,113,133,0.40);
+}
+@media(pointer:fine){
+  .pdf-card:hover{transform:translateY(-10px) scale(1.022) rotateX(5deg) rotateY(-5deg);border-color:var(--card-border);box-shadow:inset 0 2px 3px rgba(255,255,255,0.24),0 42px 80px rgba(0,0,0,0.60),0 0 60px var(--card-glow)}
+}
+.pdf-card:active{transform:translateY(2px) scale(0.972) rotateX(-2deg) !important;box-shadow:inset 0 3px 10px rgba(0,0,0,0.34),0 6px 14px rgba(0,0,0,0.28) !important;transition:transform 0.07s ease !important}
+.pdf-top{display:flex;align-items:center;gap:14px}
+.pdf-icon{width:48px;height:48px;border-radius:13px;background:var(--rose-dim);display:flex;align-items:center;justify-content:center;color:var(--rose);flex-shrink:0}
+.pdf-title{font-size:14.5px;font-weight:700;line-height:1.32}
+.pdf-meta{font-size:11.5px;color:var(--text-2);margin-top:4px;display:flex;gap:8px;flex-wrap:wrap}
+.open-pdf-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 18px;border-radius:11px;background:var(--cyan-dim);border:1px solid rgba(6,182,212,0.20);color:var(--cyan);font-size:13px;font-weight:700;cursor:pointer;font-family:var(--font-ar);transition:all 0.22s ease;user-select:none}
+.open-pdf-btn:hover{background:rgba(6,182,212,0.18);border-color:rgba(6,182,212,0.45);transform:translateY(-1px)}
+.open-pdf-btn:active{transform:scale(0.94)}
+
+/* PDF Viewer */
+.pdf-viewer-container{margin:0 24px 32px;border-radius:var(--radius-xl);overflow:hidden;background:rgba(10,20,38,0.82);border:1px solid var(--glass-border);display:none}
+.pdf-viewer-container.open{display:block;animation:viewIn 0.3s var(--ease-out) both}
+.pdf-viewer-header{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--glass-border)}
+.pdf-viewer-title{font-size:14px;font-weight:700;display:flex;align-items:center;gap:10px}
+.close-viewer-btn{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.045);border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text-2);transition:all 0.2s ease}
+.close-viewer-btn:hover{background:var(--rose-dim);color:var(--rose);border-color:rgba(251,113,133,0.28)}
+.close-viewer-btn:active{transform:scale(0.9)}
+.pdf-viewer-frame{width:100%;height:680px;border:none;background:#12172a;display:block}
+
+/* Coming Soon Card */
+.coming-soon-card{
+  grid-column:1/-1;
+  border-radius:var(--radius-xl);padding:60px 40px;text-align:center;
+  background:linear-gradient(135deg,rgba(255,255,255,0.028) 0%,rgba(255,255,255,0.007) 100%);
+  border:1px solid rgba(255,255,255,0.07);
+  backdrop-filter:blur(40px);
+}
+.cs-icon{width:80px;height:80px;border-radius:24px;background:rgba(99,102,241,0.10);border:1px solid rgba(99,102,241,0.18);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;color:#a5b4fc;font-size:28px}
+.cs-title{font-size:20px;font-weight:700;margin-bottom:10px;letter-spacing:-0.02em}
+.cs-desc{font-size:13.5px;color:var(--text-2);line-height:1.7;max-width:380px;margin:0 auto}
+.cs-badge{display:inline-flex;align-items:center;gap:7px;padding:6px 16px;border-radius:100px;background:rgba(99,102,241,0.10);border:1px solid rgba(99,102,241,0.22);color:#a5b4fc;font-size:12px;font-weight:700;font-family:var(--font-en);margin-top:18px}
+
+/* Pills */
+.subject-filter{padding:0 24px 24px;display:flex;flex-wrap:wrap;gap:10px}
+.subj-pill{padding:10px 20px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;background:rgba(255,255,255,0.038);border:1px solid var(--glass-border);color:var(--text-2);transition:all 0.22s ease;user-select:none;will-change:transform}
+.subj-pill:hover{background:var(--cyan-dim);border-color:rgba(6,182,212,0.28);color:var(--cyan)}
+.subj-pill.active{background:rgba(6,182,212,0.14);border-color:var(--cyan);color:var(--cyan)}
+.subj-pill:active{transform:scale(0.94)}
+
+/* Glow dot */
+.glow-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:pulse-glow 2.2s ease-in-out infinite}
+@keyframes pulse-glow{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.32;transform:scale(0.82)}}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--glass-border-bright),transparent);margin:10px 24px}
+
+/* Resume Chip */
+.resume-chip{position:fixed;bottom:24px;right:24px;z-index:999;background:rgba(10,18,34,0.92);border:1px solid rgba(6,182,212,0.28);backdrop-filter:blur(22px);border-radius:100px;padding:14px 20px;display:flex;align-items:center;gap:12px;cursor:pointer;font-size:13px;font-weight:600;color:var(--text-1);box-shadow:0 8px 30px rgba(0,0,0,0.48),0 0 0 1px rgba(6,182,212,0.09);transform:translateY(100px);opacity:0;transition:all 0.45s var(--ease-spring);max-width:calc(100vw - 48px)}
+.resume-chip.show{transform:translateY(0);opacity:1}
+.resume-chip:hover{border-color:rgba(6,182,212,0.5);box-shadow:0 12px 38px rgba(0,0,0,0.56),0 0 24px rgba(6,182,212,0.18)}
+.resume-chip:active{transform:scale(0.96) !important}
+.resume-close{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text-3);flex-shrink:0;transition:all 0.2s ease}
+.resume-close:hover{background:var(--rose-dim);color:var(--rose)}
+
+/* Footer */
+.footer{padding:42px 24px 32px;text-align:center;border-top:1px solid var(--glass-border);margin-top:64px}
+.footer-brand{font-family:var(--font-en);font-size:15px;font-weight:800;color:var(--text-3);letter-spacing:2.5px;margin-bottom:10px;text-transform:uppercase}
+.footer-text{font-size:12.5px;color:var(--text-3);line-height:1.75;font-weight:300}
+.footer-links{display:flex;justify-content:center;gap:22px;margin-top:16px;flex-wrap:wrap}
+.footer-link{font-size:12px;color:var(--text-3);text-decoration:none;transition:color 0.2s}
+.footer-link:hover{color:var(--cyan)}
+
+/* Mobile */
+@media(pointer:coarse){
+  .track-card:hover,.binary-card:hover,.pdf-card:hover,.lesson-row:hover,.video-item:hover{transform:none}
+  .track-card:hover::before,.binary-card:hover::before,.pdf-card:hover::before{animation:none;opacity:0}
+  .track-card:active{transform:translateY(5px) scale(0.956) !important}
+  .binary-card:active{transform:translateY(6px) scale(0.950) !important}
+  .pdf-card:active{transform:translateY(3px) scale(0.973) !important}
+  .lesson-row:active{transform:translateY(2px) scale(0.978) !important}
+  .video-item:active{transform:translateY(2px) scale(0.978) !important}
+}
+@media(min-width:1200px){
+  .cols-3{grid-template-columns:repeat(3,1fr)}
+  .cols-4{grid-template-columns:repeat(4,1fr)}
+  .cols-2{grid-template-columns:repeat(2,1fr)}
+  .binary-grid{grid-template-columns:repeat(2,1fr)}
+  .pdf-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:768px) and (max-width:1199px){
+  .cols-3,.cols-4,.binary-grid{grid-template-columns:repeat(2,1fr)}
+  .pdf-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:767px){
+  :root{--nav-h:60px}
+  .navbar{padding:0 16px}
+  .hero{padding:42px 16px 34px}
+  .section-head{padding:26px 16px 18px}
+  .cards-grid,.binary-grid,.pdf-grid{padding:0 16px 32px;gap:14px}
+  .lessons-list{padding:0 16px 32px}
+  .player-actions{padding:0 16px 18px}
+  .playlist-container{padding:0 16px 32px}
+  .breadcrumb-bar{padding:12px 16px}
+  .pdf-viewer-container{margin:0 16px 24px}
+  .pdf-viewer-frame{height:480px}
+  .resume-chip{bottom:16px;right:16px}
+  .track-card{padding:22px 18px;border-radius:var(--radius-lg)}
+  .binary-card{padding:30px 22px}
+  .pdf-card{padding:18px}
+  .lesson-row{padding:15px 16px}
+  .hero-title{font-size:clamp(32px,9vw,48px)}
+  .cards-grid.cols-3,.cards-grid.cols-4,.cards-grid.cols-2{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .track-card,.binary-card,.pdf-card,.lesson-row,.video-item{transition:border-color 0.2s ease,box-shadow 0.2s ease !important}
+  .track-card:hover,.binary-card:hover,.pdf-card:hover,.lesson-row:hover,.video-item:hover{transform:none !important}
+  .track-card::before,.binary-card::before,.pdf-card::before{display:none}
+  .mesh-orb{animation:none !important}
+  @keyframes viewIn{from{opacity:0}to{opacity:1}}
+}
+</style>
+</head>
+<body>
+
+<!-- MESH BG -->
+<div class="mesh-bg" aria-hidden="true">
+  <div class="mesh-orb"></div>
+  <div class="mesh-orb"></div>
+  <div class="mesh-orb"></div>
+  <div class="mesh-orb"></div>
+</div>
+
+<!-- AMBIENT OVERLAY -->
+<div class="ambient-overlay" id="ambientOverlay" aria-hidden="true"></div>
+
+<!-- GLOBAL LOADER -->
+<div class="global-loader" id="globalLoader">
+  <div class="loader-hex">
+    <svg width="28" height="28" viewBox="0 0 38 38" fill="none">
+      <path d="M19 5L31 12V26L19 33L7 26V12L19 5Z" stroke="#06b6d4" stroke-width="1.6" fill="none"/>
+      <path d="M19 12L26 16.5V24L19 28L12 24V16.5L19 12Z" fill="rgba(6,182,212,0.18)" stroke="#06b6d4" stroke-width="1.1"/>
+      <circle cx="19" cy="20" r="2.8" fill="#06b6d4"/>
+    </svg>
+  </div>
+  <div class="loader-text">جاري تحميل المحتوى...</div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="التنقل الرئيسي">
+  <div class="nav-logo" onclick="goHome()" role="button" tabindex="0" aria-label="الرئيسية">
+    <div class="nav-logo-hex" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 38 38" fill="none">
+        <path d="M19 5L31 12V26L19 33L7 26V12L19 5Z" stroke="#06b6d4" stroke-width="1.6" fill="none"/>
+        <path d="M19 12L26 16.5V24L19 28L12 24V16.5L19 12Z" fill="rgba(6,182,212,0.18)" stroke="#06b6d4" stroke-width="1.1"/>
+        <circle cx="19" cy="20" r="2.8" fill="#06b6d4"/>
+      </svg>
+    </div>
+    <div class="nav-brand">
+      <div class="nav-brand-ar">مستقبلي</div>
+      <div class="nav-brand-en">Mosta9bali</div>
+    </div>
+  </div>
+  <div class="nav-socials">
+    <a href="#" class="social-btn tg" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a>
+    <a href="#" class="social-btn wa" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+    <a href="#" class="social-btn ig" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+  </div>
+</nav>
+
+<!-- MAIN WRAP -->
+<div class="main-wrap" role="main">
+<div class="container">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb-bar" id="breadcrumbBar" style="display:none" aria-label="مسار التنقل"></nav>
+
+  <!-- ERROR BANNER -->
+  <div class="error-banner" id="errorBanner" role="alert">
+    <i class="fas fa-exclamation-circle" style="color:var(--rose);font-size:20px;flex-shrink:0" aria-hidden="true"></i>
+    <div class="error-banner-text" id="errorText">تعذّر تحميل البيانات. تحقق من رابط Google Sheets وأنه منشور بشكل عام.</div>
+    <button class="error-retry" onclick="initApp()" aria-label="إعادة المحاولة">إعادة المحاولة</button>
+  </div>
+
+  <!-- SKELETON -->
+  <div id="skeleton-loader" aria-hidden="true">
+    <div class="skeleton-wrap">
+      <div class="skeleton-card"></div><div class="skeleton-card"></div>
+      <div class="skeleton-card"></div><div class="skeleton-card"></div>
+      <div class="skeleton-card"></div><div class="skeleton-card"></div>
+    </div>
+  </div>
+
+  <!-- ── VIEW: HOME ── -->
+  <div id="view-home" class="view" role="region" aria-label="الصفحة الرئيسية">
+    <section class="hero">
+      <div class="hero-eyebrow">
+        <span class="glow-dot" aria-hidden="true"></span>
+        منصة تعليمية مغربية &nbsp;·&nbsp; المنهج الوطني
+      </div>
+      <h1 class="hero-title">
+        تعلّم بشكل أذكى مع<br/>
+        <span class="gradient-text">برنامج مستقبلي</span>
+      </h1>
+      <p class="hero-sub">
+        منصتك التفاعلية الكاملة للمنهج التعليمي المغربي —
+        دروس فيديو، ملخصات، وامتحانات منظّمة بذكاء.
+      </p>
+      <div class="hero-badge-row">
+        <span class="hero-badge cyan"><i class="fas fa-play-circle" aria-hidden="true"></i><span id="stat-lessons">0</span> درس فيديو</span>
+        <span class="hero-badge indigo"><i class="fas fa-file-pdf" aria-hidden="true"></i><span id="stat-exams">0</span> امتحان PDF</span>
+        <span class="hero-badge emerald"><i class="fas fa-graduation-cap" aria-hidden="true"></i> 3 أسلاك دراسية</span>
+      </div>
+    </section>
+    <div class="section-head">
+      <h2 class="section-title">اختر <span>سلكك الدراسي</span></h2>
+      <p class="section-desc">ابدأ بتحديد مرحلتك الدراسية للوصول إلى محتواك</p>
+    </div>
+    <div class="cards-grid cols-3" id="home-tracks-grid" role="list"></div>
+    <div class="divider"></div>
+    <footer class="footer">
+      <div class="footer-brand">Mosta9bali.ma</div>
+      <div class="footer-text">منصة تعليمية مغربية — مبنية للطالب المغربي، بأفضل محتوى وتجربة تعليمية حديثة</div>
+      <div class="footer-links">
+        <a href="#" class="footer-link">سياسة الخصوصية</a>
+        <a href="#" class="footer-link">شروط الاستخدام</a>
+        <a href="#" class="footer-link">اتصل بنا</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ── VIEW: PRIMARY GRADES ── -->
+  <div id="view-primary" class="view" role="region">
+    <div class="section-head">
+      <h2 class="section-title">السلك <span>الابتدائي</span></h2>
+      <p class="section-desc">اختر المستوى الدراسي</p>
+    </div>
+    <div class="cards-grid cols-3" id="primary-grades-grid" role="list"></div>
+  </div>
+
+  <!-- ── VIEW: PRIMARY SUBJECTS ── -->
+  <div id="view-primary-subjects" class="view" role="region">
+    <div class="section-head">
+      <h2 class="section-title" id="ps-title">المواد <span>الدراسية</span></h2>
+      <p class="section-desc">اختر المادة لعرض الدروس المتاحة</p>
+    </div>
+    <div class="cards-grid cols-3" id="primary-subjects-grid" role="list"></div>
+  </div>
+
+  <!-- ── VIEW: MIDDLE YEARS ── -->
+  <div id="view-middle" class="view" role="region">
+    <div class="section-head">
+      <h2 class="section-title">السلك <span>الإعدادي</span></h2>
+      <p class="section-desc">اختر السنة الدراسية</p>
+    </div>
+    <div class="cards-grid cols-3" id="middle-years-grid" role="list"></div>
+  </div>
+
+  <!-- ── VIEW: HIGH LEVELS ── -->
+  <div id="view-high" class="view" role="region">
+    <div class="section-head">
+      <h2 class="section-title">الثانوي <span>والباكالوريا</span></h2>
+      <p class="section-desc">اختر المستوى الدراسي</p>
+    </div>
+    <div class="cards-grid cols-3" id="high-levels-grid" role="list"></div>
+  </div>
+
+  <!-- ── VIEW: BINARY (Mode Select) ── -->
+  <div id="view-binary" class="view" role="region">
+    <div class="section-head">
+      <h2 class="section-title">اختر <span>النوع</span></h2>
+      <p class="section-desc" id="binary-desc">دروس فيديو أو امتحانات PDF</p>
+    </div>
+    <div class="binary-grid" id="binary-grid" role="list"></div>
+  </div>
+
+  <!-- ── VIEW: BAC TRACK SELECT ── -->
+  <div id="view-track-select" class="view" role="region">
+    <div class="section-head">
+      <h2 class="section-title">اختر <span>المسار</span></h2>
+      <p class="section-desc">حدد تخصصك الدراسي</p>
+    </div>
+    <div class="binary-grid" id="track-select-grid" role="list"></div>
+  </div>
+
+  <!-- ── VIEW: SUBJECTS (Middle/High) ── -->
+  <div id="view-subjects" class="view" role="region">
+    <div class="section-head">
+      <h2 class="section-title" id="subjects-title">المواد <span>الدراسية</span></h2>
+      <p class="section-desc">اختر المادة لعرض المحتوى</p>
+    </div>
+    <div class="cards-grid cols-3" id="subjects-grid" role="list"></div>
+  </div>
+
+  <!-- ── VIEW: LESSONS LIST ── -->
+  <div id="view-lessons" class="view" role="region">
+    <div class="section-head">
+      <h2 class="section-title" id="lessons-title">قائمة <span>الدروس</span></h2>
+      <p class="section-desc">اختر درساً لعرض الشرح</p>
+    </div>
+    <div class="lessons-list" id="lessons-list" role="list"></div>
+  </div>
+
+  <!-- ── VIEW: VIDEO PLAYLIST ── -->
+  <div id="view-playlist" class="view" role="region">
+    <div class="section-head">
+      <h2 class="section-title" id="playlist-title">مشاهدة <span>الدرس</span></h2>
+    </div>
+    <div class="playlist-container">
+      <div class="playlist-main">
+        <div class="player-wrap" id="playerWrap">
+          <div class="player-inner">
+            <iframe id="yt-player" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" title="مشغّل الفيديو"></iframe>
+          </div>
+          <div class="player-controls">
+            <div class="ambient-toggle" id="ambientToggle" onclick="toggleAmbient()" role="button" tabindex="0">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              وضع التركيز
+            </div>
+            <div id="nowPlayingLabel" style="font-size:12.5px;color:var(--text-2);max-width:55%;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="player-actions">
+          <div class="dl-btn pdf" role="button" tabindex="0" id="pdfDlBtn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+            تحميل ملخص PDF
+          </div>
+          <div class="dl-btn exercise" onclick="alert('سيتم إضافة تمارين تطبيقية قريباً')" role="button" tabindex="0">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            تمارين وفروض
+          </div>
+        </div>
+      </div>
+      <div class="playlist-sidebar">
+        <div style="font-size:13.5px;font-weight:700;padding:0 0 13px;color:var(--text-2);">الشروحات المتاحة</div>
+        <div id="video-list" style="display:flex;flex-direction:column;gap:9px;" role="list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── VIEW: EXAMS (PDF Grid) ── -->
+  <div id="view-exams" class="view" role="region">
+    <div class="section-head">
+      <h2 class="section-title" id="exams-title">مستودع <span>الامتحانات</span></h2>
+      <p class="section-desc">ملفات PDF — اضغط "افتح" لعرضها مباشرة داخل المنصة</p>
+    </div>
+    <div class="subject-filter" id="exam-filter"></div>
+    <div class="pdf-grid" id="pdf-grid" role="list"></div>
+    <div class="pdf-viewer-container" id="pdf-viewer-container" role="dialog" aria-modal="true">
+      <div class="pdf-viewer-header">
+        <div class="pdf-viewer-title">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fb7185" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span id="pdf-viewer-title-text">عارض PDF</span>
+        </div>
+        <button class="close-viewer-btn" onclick="closePdfViewer()" aria-label="إغلاق">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+      <iframe id="pdf-viewer-frame" class="pdf-viewer-frame" src="" title="عارض PDF"></iframe>
+    </div>
+  </div>
+
+</div><!-- /container -->
+</div><!-- /main-wrap -->
+
+<!-- RESUME CHIP -->
+<div class="resume-chip" id="resumeChip" role="button" tabindex="0">
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+  <span id="resumeChipText">مواصلة من حيث توقفت</span>
+  <div class="resume-close" id="resumeClose" role="button" tabindex="0" aria-label="إغلاق"><i class="fas fa-times" aria-hidden="true"></i></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════
+     JAVASCRIPT ENGINE — GOOGLE SHEETS CSV BACKEND
+     ══════════════════════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+/* ════════════════════════════════════════════════════════
+   ▶▶  PASTE YOUR PUBLISHED CSV URL HERE  ◀◀
+   (File → Share → Publish to web → CSV)
+   ════════════════════════════════════════════════════════ */
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQGUco3xJeegscl41XARwnW0KqlTs_bwa1XPtwVJ3c5MlhYOxOhgrw0y4rxvxESb3Ob1OnXivpKr1EM/pub?output=csv";
+
+/* ════════════════════════════════════════════════════════
+   RUNTIME DATA STORE — starts 100% empty
+   Populated exclusively by fetchData()
+   ════════════════════════════════════════════════════════ */
+const DB = {
+  lessons: {},   // { level: { subject: [ { title, videoUrl, pdfUrl } ] } }
+  exams:   {}    // { level: { subject: [ { title, pdfUrl } ] } }
+};
+
+/* ════════════════════════════════════════════════════════
+   STATIC METADATA
+   ════════════════════════════════════════════════════════ */
+const PRIMARY_GRADES = [
+  { key:"grade1", label:"الأول ابتدائي",    theme:"cyan",    icon:"1" },
+  { key:"grade2", label:"الثاني ابتدائي",   theme:"indigo",  icon:"2" },
+  { key:"grade3", label:"الثالث ابتدائي",   theme:"emerald", icon:"3" },
+  { key:"grade4", label:"الرابع ابتدائي",   theme:"amber",   icon:"4" },
+  { key:"grade5", label:"الخامس ابتدائي",   theme:"rose",    icon:"5" },
+  { key:"grade6", label:"السادس ابتدائي",   theme:"violet",  icon:"6" }
+];
+const MIDDLE_YEARS = [
+  { key:"middle1", label:"السنة الأولى إعدادي",  theme:"cyan",    icon:"1" },
+  { key:"middle2", label:"السنة الثانية إعدادي", theme:"indigo",  icon:"2" },
+  { key:"middle3", label:"السنة الثالثة إعدادي", theme:"emerald", icon:"3" }
+];
+const HIGH_LEVELS = [
+  { key:"tronc", label:"الجذع المشترك",     desc:"Sciences, Lettres, Technique",    theme:"cyan"    },
+  { key:"bac1",  label:"الأولى باكالوريا",  desc:"علوم رياضية أو علوم فيزيائية",   theme:"indigo"  },
+  { key:"bac2",  label:"الثانية باكالوريا", desc:"علوم رياضية أو علوم فيزيائية",   theme:"emerald" }
+];
+const SUBJECT_META = {
+  arabic:     { label:"اللغة العربية",                    icon:"fa-book-open",     theme:"rose"    },
+  french:     { label:"اللغة الفرنسية",                   icon:"fa-globe",         theme:"indigo"  },
+  english:    { label:"اللغة الإنجليزية",                 icon:"fa-language",      theme:"emerald" },
+  math:       { label:"الرياضيات",                        icon:"fa-calculator",    theme:"cyan"    },
+  physics:    { label:"الفيزياء والكيمياء",               icon:"fa-atom",          theme:"indigo"  },
+  svt:        { label:"علوم الحياة والأرض",               icon:"fa-seedling",      theme:"emerald" },
+  social:     { label:"التاريخ والجغرافيا والاجتماعيات",  icon:"fa-globe-africa",  theme:"amber"   },
+  philosophy: { label:"الفلسفة",                          icon:"fa-brain",         theme:"indigo"  },
+  islamic:    { label:"التربية الإسلامية",                 icon:"fa-moon",          theme:"emerald" },
+  computer:   { label:"المعلوميات",                       icon:"fa-laptop-code",   theme:"amber"   },
+  sport:      { label:"التربية البدنية",                  icon:"fa-running",       theme:"rose"    },
+  science:    { label:"النشاط العلمي",                    icon:"fa-flask",         theme:"violet"  }
+};
+const THEME_COLORS = {
+  cyan:"#06b6d4", indigo:"#6366f1", emerald:"#10b981",
+  amber:"#f59e0b", rose:"#fb7185",  violet:"#a78bfa"
+};
+const LS_PROGRESS = 'mosta9bali_progress_v4';
+
+/* ════════════════════════════════════════════════════════
+   APP STATE
+   ════════════════════════════════════════════════════════ */
+const APP = {
+  currentView: 'view-home',
+  breadcrumbs: [],
+  track: null,
+  grade: null,
+  subject: null,
+  mode: null,
+  ambientOn: false,
+  currentLessonPdfUrl: null
+};
+const BACK_STACK = [];
+
+/* ════════════════════════════════════════════════════════
+   CSV FETCH & PARSE ENGINE
+   ════════════════════════════════════════════════════════ */
+async function fetchData() {
+  if (SHEET_URL === "YOUR_GOOGLE_SHEETS_CSV_URL_HERE") {
+    showError("لم يتم تعيين رابط Google Sheets بعد. افتح ملف index.html وضع الرابط في ثابت SHEET_URL.");
+    hideLoader();
+    return;
+  }
+  try {
+    const res = await fetch(SHEET_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const raw = await res.text();
+    parseCSV(raw);
+    updateStats();
+    hideLoader();
+    checkResume();
+  } catch(e) {
+    console.error('[Mosta9bali]', e);
+    showError(`فشل الاتصال بـ Google Sheets: ${e.message}`);
+    hideLoader();
+  }
+}
+
+function parseCSV(raw) {
+  // Reset
+  DB.lessons = {};
+  DB.exams   = {};
+
+  const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
+  if (lines.length < 2) return;
+
+  // Parse header row to find column indices dynamically
+  const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase().replace(/"/g,''));
+  const idx = {
+    type:      headers.indexOf('type'),
+    track:     headers.indexOf('track'),
+    level:     headers.indexOf('level'),
+    subject:   headers.indexOf('subject'),
+    title:     headers.indexOf('title'),
+    video_url: headers.indexOf('video_url'),
+    pdf_url:   headers.indexOf('pdf_url')
+  };
+
+  // Validate required columns exist
+  if (idx.type < 0 || idx.level < 0 || idx.subject < 0 || idx.title < 0) {
+    showError('أعمدة الـ CSV غير صحيحة. تأكد من أسماء الأعمدة: type, track, level, subject, title, video_url, pdf_url');
+    return;
+  }
+
+  for (let i = 1; i < lines.length; i++) {
+    const cols = parseCSVLine(lines[i]).map(c => (c || '').trim().replace(/^"|"$/g,'').trim());
+    const type      = cols[idx.type]      || '';
+    const level     = cols[idx.level]     || '';
+    const subject   = cols[idx.subject]   || '';
+    const title     = cols[idx.title]     || '';
+    const videoUrl  = idx.video_url >= 0 ? (cols[idx.video_url] || '') : '';
+    const pdfUrl    = idx.pdf_url   >= 0 ? (cols[idx.pdf_url]   || '') : '';
+
+    if (!type || !level || !subject || !title) continue;
+
+    if (type === 'درس') {
+      if (!DB.lessons[level]) DB.lessons[level] = {};
+      if (!DB.lessons[level][subject]) DB.lessons[level][subject] = [];
+      DB.lessons[level][subject].push({ title, videoUrl, pdfUrl });
+    } else if (type === 'امتحان') {
+      if (!DB.exams[level]) DB.exams[level] = {};
+      if (!DB.exams[level][subject]) DB.exams[level][subject] = [];
+      DB.exams[level][subject].push({ title, pdfUrl });
+    }
+  }
+}
+
+// Robust CSV line parser (handles quoted commas)
+function parseCSVLine(line) {
+  const result = [];
+  let cur = '', inQ = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') {
+      if (inQ && line[i+1] === '"') { cur += '"'; i++; }
+      else { inQ = !inQ; }
+    } else if (ch === ',' && !inQ) {
+      result.push(cur); cur = '';
+    } else {
+      cur += ch;
+    }
+  }
+  result.push(cur);
+  return result;
+}
+
+/* ════════════════════════════════════════════════════════
+   LOADER / ERROR UI
+   ════════════════════════════════════════════════════════ */
+function hideLoader() {
+  const loader = document.getElementById('globalLoader');
+  loader.classList.add('hidden');
+  setTimeout(() => { loader.style.display = 'none'; }, 600);
+  // Show home view
+  document.getElementById('view-home').classList.add('active');
+  APP.currentView = 'view-home';
+}
+
+function showError(msg) {
+  const banner = document.getElementById('errorBanner');
+  document.getElementById('errorText').textContent = msg;
+  banner.classList.add('show');
+}
+function hideError() {
+  document.getElementById('errorBanner').classList.remove('hide');
+  document.getElementById('errorBanner').classList.remove('show');
+}
+
+function updateStats() {
+  let lessons = 0, exams = 0;
+  Object.values(DB.lessons).forEach(lvl => Object.values(lvl).forEach(arr => lessons += arr.length));
+  Object.values(DB.exams).forEach(lvl   => Object.values(lvl).forEach(arr => exams   += arr.length));
+  document.getElementById('stat-lessons').textContent = lessons;
+  document.getElementById('stat-exams').textContent   = exams;
+}
+
+/* ════════════════════════════════════════════════════════
+   VIEW ENGINE
+   ════════════════════════════════════════════════════════ */
+function showSkeleton() { document.getElementById('skeleton-loader').classList.add('active'); }
+function hideSkeleton()  { document.getElementById('skeleton-loader').classList.remove('active'); }
+
+function showView(id) {
+  showSkeleton();
+  setTimeout(() => {
+    hideSkeleton();
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    APP.currentView = id;
+    renderBreadcrumb();
+    window.scrollTo({ top: 68, behavior: 'smooth' });
+  }, 220);
+}
+
+/* ════════════════════════════════════════════════════════
+   BREADCRUMB ENGINE
+   ════════════════════════════════════════════════════════ */
+function renderBreadcrumb() {
+  const bar = document.getElementById('breadcrumbBar');
+  if (!APP.breadcrumbs.length) { bar.style.display = 'none'; return; }
+  bar.style.display = 'flex';
+  let html = `<span class="bc-item" onclick="goHome()" role="button" tabindex="0">الرئيسية</span>`;
+  APP.breadcrumbs.forEach((bc, i) => {
+    html += `<span class="bc-sep" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>`;
+    if (i === APP.breadcrumbs.length - 1) {
+      html += `<span class="bc-current" aria-current="page">${bc.label}</span>`;
+    } else {
+      html += `<span class="bc-item" onclick="bcNav(${i})" role="button" tabindex="0">${bc.label}</span>`;
+    }
+  });
+  html += `<div class="back-btn" onclick="goBack()" role="button" tabindex="0">
+    <i class="fas fa-arrow-right" aria-hidden="true"></i> رجوع
+  </div>`;
+  bar.innerHTML = html;
+}
+
+function pushBC(label) { APP.breadcrumbs.push({ label }); }
+
+function goHome() {
+  Object.assign(APP, {
+    breadcrumbs:[], track:null, grade:null, subject:null,
+    mode:null, ambientOn:false, currentLessonPdfUrl:null
+  });
+  BACK_STACK.length = 0;
+  document.getElementById('ambientOverlay').classList.remove('active');
+  document.getElementById('ambientToggle').classList.remove('on');
+  document.getElementById('yt-player').src = '';
+  document.getElementById('pdf-viewer-container').classList.remove('open');
+  updateStats();
+  showView('view-home');
+}
+
+function goBack() {
+  if (!BACK_STACK.length) { goHome(); return; }
+  const prev = BACK_STACK.pop();
+  Object.assign(APP, prev.state);
+  APP.breadcrumbs = prev.breadcrumbs;
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById(prev.view).classList.add('active');
+  APP.currentView = prev.view;
+  renderBreadcrumb();
+  window.scrollTo({ top: 68, behavior: 'smooth' });
+}
+
+function bcNav(idx) {
+  const stepsBack = APP.breadcrumbs.length - 1 - idx;
+  for (let i = 0; i < stepsBack; i++) goBack();
+}
+
+function navigate(target, ...args) {
+  BACK_STACK.push({
+    view: APP.currentView,
+    breadcrumbs: JSON.parse(JSON.stringify(APP.breadcrumbs)),
+    state: { ...APP, breadcrumbs: undefined }
+  });
+  _navTo(target, ...args);
+  setTimeout(saveProgress, 300);
+}
+
+/* ════════════════════════════════════════════════════════
+   NAVIGATION ROUTER
+   ════════════════════════════════════════════════════════ */
+function _navTo(target, ...args) {
+  switch(target) {
+
+    case 'primary':
+      APP.track = 'primary'; pushBC('السلك الابتدائي');
+      buildPrimaryGrades(); showView('view-primary');
+      break;
+
+    case 'primary-grade': {
+      const [gKey, gLabel] = args;
+      APP.grade = gKey; pushBC(gLabel);
+      buildPrimarySubjects(gKey, gLabel);
+      showView('view-primary-subjects');
+      break;
+    }
+
+    case 'primary-subject': {
+      const [sKey, sLabel] = args;
+      APP.subject = sKey; pushBC(sLabel);
+      const items = (DB.lessons[APP.grade] || {})[sKey] || [];
+      buildLessonsList(sLabel, items);
+      showView('view-lessons');
+      break;
+    }
+
+    case 'middle':
+      APP.track = 'middle'; pushBC('السلك الإعدادي');
+      buildMiddleYears(); showView('view-middle');
+      break;
+
+    case 'middle-year': {
+      const [yKey, yLabel] = args;
+      APP.grade = yKey; pushBC(yLabel);
+      buildBinary(yLabel); showView('view-binary');
+      break;
+    }
+
+    case 'high':
+      APP.track = 'high'; pushBC('الثانوي والباكالوريا');
+      buildHighLevels(); showView('view-high');
+      break;
+
+    case 'high-level': {
+      const [lKey, lLabel] = args;
+      APP.grade = lKey; pushBC(lLabel);
+      if (lKey === 'tronc') {
+        buildBinary(lLabel); showView('view-binary');
+      } else {
+        buildTrackSelect(lKey); showView('view-track-select');
+      }
+      break;
+    }
+
+    case 'bac-track': {
+      const [tKey, tLabel] = args;
+      APP.grade = APP.grade + '_' + tKey;
+      pushBC(tLabel);
+      buildBinary(tLabel); showView('view-binary');
+      break;
+    }
+
+    case 'mode-lessons':
+      APP.mode = 'lessons'; pushBC('دروس عادية');
+      buildSubjectsGrid(APP.grade, 'lessons');
+      showView('view-subjects');
+      break;
+
+    case 'mode-exams':
+      APP.mode = 'exams'; pushBC('امتحانات');
+      buildSubjectsGrid(APP.grade, 'exams');
+      showView('view-subjects');
+      break;
+
+    case 'subject-lessons': {
+      const [sKey, sLabel] = args;
+      APP.subject = sKey; pushBC(sLabel);
+      const items = (DB.lessons[APP.grade] || {})[sKey] || [];
+      buildLessonsList(sLabel, items);
+      showView('view-lessons');
+      break;
+    }
+
+    case 'subject-exams': {
+      const [sKey, sLabel] = args;
+      APP.subject = sKey; pushBC(sLabel);
+      const items = (DB.exams[APP.grade] || {})[sKey] || [];
+      buildPdfGrid(sLabel, items);
+      showView('view-exams');
+      break;
+    }
+
+    case 'lesson': {
+      const [lessonObj] = args;
+      const shortTitle = lessonObj.title.length > 36 ? lessonObj.title.slice(0,36)+'…' : lessonObj.title;
+      pushBC(shortTitle);
+      APP.currentLessonPdfUrl = lessonObj.pdfUrl || null;
+      buildPlaylist(lessonObj);
+      showView('view-playlist');
+      break;
+    }
+  }
+}
+
+/* ════════════════════════════════════════════════════════
+   SVG NUMBER ICON
+   ════════════════════════════════════════════════════════ */
+function numIcon(num, theme) {
+  const c = THEME_COLORS[theme] || THEME_COLORS.cyan;
+  return `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+    <rect width="28" height="28" rx="8" fill="${c}22"/>
+    <text x="14" y="19" text-anchor="middle" fill="${c}" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="13">${num}</text>
+  </svg>`;
+}
+
+/* ════════════════════════════════════════════════════════
+   COMING SOON CARD
+   ════════════════════════════════════════════════════════ */
+function comingSoonCard(msg = 'لم يتم إضافة محتوى بعد') {
+  return `<div class="coming-soon-card" role="status">
+    <div class="cs-icon"><i class="fas fa-hourglass-half" aria-hidden="true"></i></div>
+    <div class="cs-title">قريباً</div>
+    <div class="cs-desc">${msg}</div>
+    <div class="cs-badge"><i class="fas fa-clock" aria-hidden="true"></i> Coming Soon</div>
+  </div>`;
+}
+
+/* ════════════════════════════════════════════════════════
+   HOME TRACKS GRID
+   ════════════════════════════════════════════════════════ */
+function buildHomeTracksGrid() {
+  const tracks = [
+    {
+      id:'primary', theme:'cyan', badge:'badge-cyan', badgeText:'6 مستويات',
+      title:'السلك الابتدائي',
+      sub:'من الأول إلى السادس ابتدائي — دروس شاملة لكل المواد',
+      icon:`<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`
+    },
+    {
+      id:'middle', theme:'indigo', badge:'badge-indigo', badgeText:'3 سنوات',
+      title:'السلك الإعدادي',
+      sub:'السنة الأولى إلى الثالثة — دروس وامتحانات محلية وجهوية',
+      icon:`<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`
+    },
+    {
+      id:'high', theme:'emerald', badge:'badge-emerald', badgeText:'3 مستويات',
+      title:'الثانوي والباكالوريا',
+      sub:'الجذع المشترك، الأولى والثانية باك — مسارات متخصصة',
+      icon:`<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`
+    }
+  ];
+  const el = document.getElementById('home-tracks-grid');
+  if (!el) return;
+  el.innerHTML = tracks.map(t => `
+    <div class="track-card" data-theme="${t.theme}" onclick="navigate('${t.id}')" role="listitem" tabindex="0" aria-label="${t.title}">
+      <div class="card-icon ${t.theme}">${t.icon}</div>
+      <div class="card-title">${t.title}</div>
+      <div class="card-sub">${t.sub}</div>
+      <div class="card-badge ${t.badge}">${t.badgeText}</div>
+      <div class="card-arrow" aria-hidden="true"><i class="fas fa-chevron-left"></i></div>
+    </div>`).join('');
+}
+
+/* ════════════════════════════════════════════════════════
+   PRIMARY GRADES
+   ════════════════════════════════════════════════════════ */
+function buildPrimaryGrades() {
+  const el = document.getElementById('primary-grades-grid');
+  if (!el) return;
+  el.innerHTML = PRIMARY_GRADES.map(g => `
+    <div class="track-card" data-theme="${g.theme}" onclick="navigate('primary-grade','${g.key}','${g.label}')" role="listitem" tabindex="0" aria-label="${g.label}">
+      <div class="card-icon ${g.theme}">${numIcon(g.icon, g.theme)}</div>
+      <div class="card-title">${g.label}</div>
+      <div class="card-sub">دروس فيديو مُحدّثة من Google Sheets</div>
+      <div class="card-arrow" aria-hidden="true"><i class="fas fa-chevron-left"></i></div>
+    </div>`).join('');
+}
+
+/* ════════════════════════════════════════════════════════
+   PRIMARY SUBJECTS
+   ════════════════════════════════════════════════════════ */
+function buildPrimarySubjects(gradeKey, gradeLabel) {
+  const titleEl = document.getElementById('ps-title');
+  if (titleEl) titleEl.innerHTML = `مواد <span>${gradeLabel}</span>`;
+  const el = document.getElementById('primary-subjects-grid');
+  if (!el) return;
+  const gradeData = DB.lessons[gradeKey] || {};
+  const subjKeys = Object.keys(SUBJECT_META);
+  el.innerHTML = subjKeys.map(sKey => {
+    const meta = SUBJECT_META[sKey];
+    const count = (gradeData[sKey] || []).length;
+    return `<div class="track-card" data-theme="${meta.theme}" onclick="navigate('primary-subject','${sKey}','${meta.label}')" role="listitem" tabindex="0" aria-label="${meta.label}">
+      <div class="card-icon ${meta.theme}"><i class="fas ${meta.icon}" aria-hidden="true"></i></div>
+      <div class="card-title">${meta.label}</div>
+      <div class="card-sub">${count > 0 ? count + ' درس متاح' : 'قريباً'}</div>
+      <div class="card-arrow" aria-hidden="true"><i class="fas fa-chevron-left"></i></div>
+    </div>`;
+  }).join('');
+}
+
+/* ════════════════════════════════════════════════════════
+   MIDDLE YEARS
+   ════════════════════════════════════════════════════════ */
+function buildMiddleYears() {
+  const el = document.getElementById('middle-years-grid');
+  if (!el) return;
+  el.innerHTML = MIDDLE_YEARS.map(y => `
+    <div class="track-card" data-theme="${y.theme}" onclick="navigate('middle-year','${y.key}','${y.label}')" role="listitem" tabindex="0" aria-label="${y.label}">
+      <div class="card-icon ${y.theme}">${numIcon(y.icon, y.theme)}</div>
+      <div class="card-title">${y.label}</div>
+      <div class="card-sub">دروس وامتحانات — يُحمَّل من Google Sheets</div>
+      <div class="card-arrow" aria-hidden="true"><i class="fas fa-chevron-left"></i></div>
+    </div>`).join('');
+}
+
+/* ════════════════════════════════════════════════════════
+   HIGH LEVELS
+   ════════════════════════════════════════════════════════ */
+function buildHighLevels() {
+  const el = document.getElementById('high-levels-grid');
+  if (!el) return;
+  el.innerHTML = HIGH_LEVELS.map(l => `
+    <div class="track-card" data-theme="${l.theme}" onclick="navigate('high-level','${l.key}','${l.label}')" role="listitem" tabindex="0" aria-label="${l.label}">
+      <div class="card-icon ${l.theme}">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      </div>
+      <div class="card-title">${l.label}</div>
+      <div class="card-sub">${l.desc}</div>
+      <div class="card-arrow" aria-hidden="true"><i class="fas fa-chevron-left"></i></div>
+    </div>`).join('');
+}
+
+/* ════════════════════════════════════════════════════════
+   BINARY (Mode Select)
+   ════════════════════════════════════════════════════════ */
+function buildBinary(contextLabel) {
+  const descEl = document.getElementById('binary-desc');
+  if (descEl) descEl.textContent = contextLabel;
+  const el = document.getElementById('binary-grid');
+  if (!el) return;
+  el.innerHTML = `
+    <div class="binary-card type-lesson" onclick="navigate('mode-lessons')" role="listitem" tabindex="0" aria-label="دروس عادية">
+      <div class="bc-icon-wrap">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.87v6.26a1 1 0 0 1-1.447.894L15 14M3 8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/></svg>
+      </div>
+      <div class="bc-title">دروس عادية</div>
+      <div class="bc-desc">شروحات فيديو منظّمة حسب المادة والدرس</div>
+    </div>
+    <div class="binary-card type-exam" onclick="navigate('mode-exams')" role="listitem" tabindex="0" aria-label="امتحانات PDF">
+      <div class="bc-icon-wrap">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <div class="bc-title">امتحانات PDF</div>
+      <div class="bc-desc">مستودع امتحانات PDF مع عارض مدمج داخل المنصة</div>
+    </div>`;
+}
+
+/* ════════════════════════════════════════════════════════
+   BAC TRACK SELECT
+   ════════════════════════════════════════════════════════ */
+function buildTrackSelect() {
+  const el = document.getElementById('track-select-grid');
+  if (!el) return;
+  el.innerHTML = `
+    <div class="binary-card type-lesson" onclick="navigate('bac-track','science_math','علوم رياضية')" role="listitem" tabindex="0" aria-label="علوم رياضية">
+      <div class="bc-icon-wrap">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <div class="bc-title">علوم رياضية</div>
+      <div class="bc-desc">مسار الرياضيات والفيزياء — تخصص علمي متقدم</div>
+    </div>
+    <div class="binary-card type-exam" onclick="navigate('bac-track','science_phys','علوم فيزيائية')" role="listitem" tabindex="0" aria-label="علوم فيزيائية">
+      <div class="bc-icon-wrap">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+      </div>
+      <div class="bc-title">علوم فيزيائية</div>
+      <div class="bc-desc">مسار الفيزياء والكيمياء — تخصص تطبيقي</div>
+    </div>`;
+}
+
+/* ════════════════════════════════════════════════════════
+   SUBJECTS GRID (Middle / High — driven by DB)
+   ════════════════════════════════════════════════════════ */
+function buildSubjectsGrid(gradeKey, mode) {
+  const el = document.getElementById('subjects-grid');
+  const titleEl = document.getElementById('subjects-title');
+  if (titleEl) titleEl.innerHTML = mode === 'exams' ? `مواد <span>الامتحانات</span>` : `المواد <span>الدراسية</span>`;
+  if (!el) return;
+
+  const source = mode === 'exams' ? (DB.exams[gradeKey] || {}) : (DB.lessons[gradeKey] || {});
+  // Collect subjects that actually have data, plus all known subjects
+  const allSubjKeys = Object.keys(SUBJECT_META);
+  const activeSubjs = new Set(Object.keys(source));
+
+  // Show subjects with data first, then others as "coming soon"
+  const sortedKeys = [
+    ...allSubjKeys.filter(k => activeSubjs.has(k)),
+    ...allSubjKeys.filter(k => !activeSubjs.has(k))
+  ];
+
+  if (sortedKeys.length === 0) {
+    el.innerHTML = comingSoonCard('لم يتم إضافة أي محتوى لهذا المستوى بعد. أضف صفوفاً في Google Sheets.');
+    return;
+  }
+
+  const navTarget = mode === 'exams' ? 'subject-exams' : 'subject-lessons';
+  el.innerHTML = sortedKeys.map(sKey => {
+    const meta  = SUBJECT_META[sKey] || { label: sKey, icon:'fa-book', theme:'cyan' };
+    const count = (source[sKey] || []).length;
+    return `<div class="track-card" data-theme="${meta.theme}" onclick="navigate('${navTarget}','${sKey}','${meta.label}')" role="listitem" tabindex="0" aria-label="${meta.label}">
+      <div class="card-icon ${meta.theme}"><i class="fas ${meta.icon}" aria-hidden="true"></i></div>
+      <div class="card-title">${meta.label}</div>
+      <div class="card-sub">${count > 0 ? count + (mode==='exams' ? ' امتحان متاح' : ' درس متاح') : 'قريباً'}</div>
+      <div class="card-arrow" aria-hidden="true"><i class="fas fa-chevron-left"></i></div>
+    </div>`;
+  }).join('');
+}
+
+/* ════════════════════════════════════════════════════════
+   LESSONS LIST
+   ════════════════════════════════════════════════════════ */
+function buildLessonsList(subjectLabel, lessons) {
+  const titleEl = document.getElementById('lessons-title');
+  if (titleEl) titleEl.innerHTML = `دروس <span>${subjectLabel}</span>`;
+  const el = document.getElementById('lessons-list');
+  if (!el) return;
+
+  if (!lessons.length) {
+    el.innerHTML = comingSoonCard('لا توجد دروس في هذا القسم حتى الآن. أضفها عبر Google Sheets.');
+    return;
+  }
+
+  el.innerHTML = lessons.map((l, i) => {
+    const safe = JSON.stringify(l).replace(/'/g,"&#39;").replace(/"/g,'&quot;');
+    return `<div class="lesson-row" onclick='_lessonClick(this)' data-lesson="${safe}" role="listitem" tabindex="0" aria-label="${l.title}">
+      <div class="lesson-num" aria-hidden="true">${String(i+1).padStart(2,'0')}</div>
+      <div style="flex:1">
+        <div class="lesson-title">${l.title}</div>
+        <div class="lesson-meta">
+          <i class="fas fa-play-circle" style="font-size:11px;color:var(--cyan)" aria-hidden="true"></i>
+          ${l.videoUrl ? 'شرح متاح' : 'قيد الإضافة'}
+          ${l.pdfUrl ? ' &nbsp;·&nbsp; <i class="fas fa-file-pdf" style="font-size:10px;color:var(--rose)"></i> PDF' : ''}
+        </div>
+      </div>
+      <i class="fas fa-chevron-left lesson-chevron" aria-hidden="true"></i>
+    </div>`;
+  }).join('');
+}
+
+function _lessonClick(el) {
+  try {
+    const raw = el.getAttribute('data-lesson').replace(/&quot;/g,'"').replace(/&#39;/g,"'");
+    const lessonObj = JSON.parse(raw);
+    navigate('lesson', lessonObj);
+  } catch(e) { console.error('lesson click parse error', e); }
+}
+
+/* ════════════════════════════════════════════════════════
+   VIDEO PLAYLIST
+   ════════════════════════════════════════════════════════ */
+function buildPlaylist(lessonObj) {
+  const titleEl = document.getElementById('playlist-title');
+  if (titleEl) titleEl.innerHTML = `شرح: <span>${lessonObj.title}</span>`;
+
+  // PDF download button
+  const pdfBtn = document.getElementById('pdfDlBtn');
+  if (pdfBtn) {
+    if (lessonObj.pdfUrl) {
+      pdfBtn.onclick = () => window.open(lessonObj.pdfUrl, '_blank');
+      pdfBtn.style.opacity = '1';
+    } else {
+      pdfBtn.onclick = () => alert('لا يوجد ملف PDF لهذا الدرس بعد');
+      pdfBtn.style.opacity = '0.5';
+    }
+  }
+
+  const listEl = document.getElementById('video-list');
+  if (!listEl) return;
+
+  // A single lesson row = one video entry in the sheet
+  // We treat each lesson as having a single video (from the video_url column)
+  if (!lessonObj.videoUrl) {
+    listEl.innerHTML = `<div style="padding:20px;text-align:center;color:var(--text-3);font-size:13px">
+      <i class="fas fa-hourglass-half" style="font-size:24px;margin-bottom:12px;display:block;color:var(--indigo)"></i>
+      الفيديو قيد الإضافة
+    </div>`;
+    document.getElementById('yt-player').src = '';
+    document.getElementById('nowPlayingLabel').textContent = '';
+    return;
+  }
+
+  // Extract YouTube ID from URL
+  const ytId = extractYtId(lessonObj.videoUrl);
+
+  listEl.innerHTML = `
+    <div class="video-item selected" role="listitem" tabindex="0" aria-label="${lessonObj.title}">
+      <div class="vi-thumb">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polygon points="5 3 19 12 5 21 5 3" fill="rgba(6,182,212,0.28)" stroke="var(--cyan)"/>
+        </svg>
+      </div>
+      <div style="flex:1;overflow:hidden">
+        <div class="vi-title">${lessonObj.title}</div>
+        <div class="vi-teacher">مُضاف من Google Sheets</div>
+      </div>
+    </div>`;
+
+  if (ytId) {
+    document.getElementById('yt-player').src = `https://www.youtube.com/embed/${ytId}?rel=0&modestbranding=1`;
+    document.getElementById('nowPlayingLabel').textContent = lessonObj.title;
+  } else {
+    // Non-YouTube URL — try to embed directly
+    document.getElementById('yt-player').src = lessonObj.videoUrl;
+    document.getElementById('nowPlayingLabel').textContent = lessonObj.title;
+  }
+}
+
+function extractYtId(url) {
+  if (!url) return null;
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/
+  ];
+  for (const p of patterns) {
+    const m = url.match(p);
+    if (m) return m[1];
+  }
+  return null;
+}
+
+/* ════════════════════════════════════════════════════════
+   PDF GRID
+   ════════════════════════════════════════════════════════ */
+function buildPdfGrid(subjectLabel, exams) {
+  const titleEl = document.getElementById('exams-title');
+  if (titleEl) titleEl.innerHTML = `امتحانات <span>${subjectLabel}</span>`;
+  const el = document.getElementById('pdf-grid');
+  const filterEl = document.getElementById('exam-filter');
+  if (filterEl) filterEl.innerHTML = '';
+  document.getElementById('pdf-viewer-container').classList.remove('open');
+  if (!el) return;
+
+  if (!exams.length) {
+    el.innerHTML = comingSoonCard('لا توجد امتحانات في هذا القسم. أضفها عبر Google Sheets.');
+    return;
+  }
+
+  el.innerHTML = exams.map(exam => `
+    <div class="pdf-card" role="listitem">
+      <div class="pdf-top">
+        <div class="pdf-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+        </div>
+        <div>
+          <div class="pdf-title">${exam.title}</div>
+          <div class="pdf-meta">
+            <span>${subjectLabel}</span>
+            ${exam.pdfUrl ? '<span>·</span><span style="color:var(--emerald);font-size:11px"><i class="fas fa-check-circle"></i> متاح</span>' : '<span style="color:var(--text-3)">لا يوجد رابط</span>'}
+          </div>
+        </div>
+      </div>
+      ${exam.pdfUrl
+        ? `<div class="open-pdf-btn" onclick="openPdf('${exam.pdfUrl.replace(/'/g,"&#39;")}','${exam.title.replace(/'/g,"&#39;")}')" role="button" tabindex="0">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            افتح / Open
+           </div>`
+        : `<div class="open-pdf-btn" style="opacity:0.4;cursor:default;pointer-events:none">
+            <i class="fas fa-clock"></i> قريباً
+           </div>`}
+    </div>`).join('');
+}
+
+function openPdf(url, title) {
+  const container = document.getElementById('pdf-viewer-container');
+  document.getElementById('pdf-viewer-title-text').textContent = decodeURIComponent(title);
+  document.getElementById('pdf-viewer-frame').src = url;
+  container.classList.add('open');
+  container.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+function closePdfViewer() {
+  document.getElementById('pdf-viewer-container').classList.remove('open');
+  document.getElementById('pdf-viewer-frame').src = '';
+}
+
+/* ════════════════════════════════════════════════════════
+   AMBIENT FOCUS MODE
+   ════════════════════════════════════════════════════════ */
+function toggleAmbient() {
+  APP.ambientOn = !APP.ambientOn;
+  const overlay = document.getElementById('ambientOverlay');
+  const toggle  = document.getElementById('ambientToggle');
+  const wrap    = document.getElementById('playerWrap');
+  overlay.classList.toggle('active', APP.ambientOn);
+  toggle.classList.toggle('on', APP.ambientOn);
+  if (wrap) wrap.style.zIndex = APP.ambientOn ? '901' : '';
+}
+
+/* ════════════════════════════════════════════════════════
+   RESUME CHIP
+   ════════════════════════════════════════════════════════ */
+function saveProgress() {
+  const data = {
+    label: APP.breadcrumbs.length ? APP.breadcrumbs[APP.breadcrumbs.length-1].label : null,
+    ts: Date.now()
+  };
+  try { localStorage.setItem(LS_PROGRESS, JSON.stringify(data)); } catch(e) {}
+}
+function checkResume() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(LS_PROGRESS) || 'null');
+    if (saved && saved.label) {
+      document.getElementById('resumeChipText').textContent = `مواصلة: ${saved.label}`;
+      setTimeout(() => document.getElementById('resumeChip').classList.add('show'), 1000);
+    }
+  } catch(e) {}
+}
+function dismissResumeChip(e) {
+  if (e) e.stopPropagation();
+  document.getElementById('resumeChip').classList.remove('show');
+  try { localStorage.removeItem(LS_PROGRESS); } catch(e) {}
+}
+
+/* ════════════════════════════════════════════════════════
+   NAVBAR SCROLL
+   ════════════════════════════════════════════════════════ */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+/* ════════════════════════════════════════════════════════
+   KEYBOARD ACCESSIBILITY
+   ════════════════════════════════════════════════════════ */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    const el = e.target;
+    const clickable = [
+      'track-card','binary-card','lesson-row','video-item',
+      'back-btn','bc-item','open-pdf-btn','dl-btn','subj-pill'
+    ];
+    if (clickable.some(cls => el.classList.contains(cls))) {
+      e.preventDefault(); el.click();
+    }
+  }
+  if (e.key === 'Escape') {
+    if (APP.ambientOn) toggleAmbient();
+    closePdfViewer();
+  }
+});
+
+/* ════════════════════════════════════════════════════════
+   RESUME CHIP EVENTS
+   ════════════════════════════════════════════════════════ */
+document.getElementById('resumeChip').addEventListener('click', function(e) {
+  if (e.target.closest('#resumeClose')) { dismissResumeChip(e); return; }
+  this.classList.remove('show');
+});
+document.getElementById('resumeClose').addEventListener('click', dismissResumeChip);
+
+/* ════════════════════════════════════════════════════════
+   INIT
+   ════════════════════════════════════════════════════════ */
+function initApp() {
+  hideError();
+  document.getElementById('globalLoader').style.display = '';
+  document.getElementById('globalLoader').classList.remove('hidden');
+  buildHomeTracksGrid();
+  fetchData();
+}
+
+document.addEventListener('DOMContentLoaded', initApp);
+</script>
+</body>
+</html>
