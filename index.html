@@ -2,18 +2,14 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>مستقبلي — منصة تعليمية مغربية</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="icon" href="logo1.png">
 <style>
-/* ══════════════════════════════════════════════════════════════════════════
-   MOSTA9BALI — v5.0 ENHANCED EDITION
-   Ultra-smooth animations · Haptic-like feedback · Arabic Tajawal font
-   ══════════════════════════════════════════════════════════════════════════ */
-
 :root {
   --bg-void: #020617;
   --bg-surface: #0a1020;
@@ -21,7 +17,6 @@
   --glass-hover: rgba(24,35,58,0.70);
   --glass-border: rgba(255,255,255,0.07);
   --glass-border-bright: rgba(255,255,255,0.13);
-
   --cyan: #06b6d4;
   --cyan-dim: rgba(6,182,212,0.12);
   --cyan-glow: rgba(6,182,212,0.30);
@@ -35,30 +30,22 @@
   --rose-dim: rgba(251,113,133,0.12);
   --violet: #a78bfa;
   --violet-dim: rgba(167,139,250,0.12);
-
   --text-1: #f1f5f9;
   --text-2: #94a3b8;
   --text-3: #475569;
-
-  /* ── IMPROVED ARABIC FONTS ── */
   --font-ar: 'Tajawal', 'IBM Plex Sans Arabic', sans-serif;
   --font-en: 'Plus Jakarta Sans', sans-serif;
-
   --radius-2xl: 24px;
   --radius-xl: 20px;
   --radius-lg: 16px;
   --radius-md: 12px;
-
   --nav-h: 68px;
-
-  /* ── SPRING CURVES ── */
   --ease-spring: cubic-bezier(0.34,1.56,0.64,1);
   --ease-out: cubic-bezier(0.22,1,0.36,1);
   --ease-bounce: cubic-bezier(0.68,-0.55,0.265,1.55);
   --ease-smooth: cubic-bezier(0.4,0,0.2,1);
 }
 
-/* ══ LIGHT MODE ══ */
 body.light-mode {
   --bg-void: #f0f4f8;
   --bg-surface: #e8edf5;
@@ -110,8 +97,32 @@ body.light-mode .resume-chip { background: rgba(240,244,248,0.97); border-color:
 body.light-mode .footer { border-top-color: rgba(0,0,0,0.08); }
 body.light-mode ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); }
 body.light-mode .toggle-btn { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.09); }
+body.light-mode .lesson-group-header { background: linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(255,255,255,0.45) 100%); border-color: rgba(0,0,0,0.09); }
+body.light-mode .lesson-group-section { border-color: rgba(0,0,0,0.05); }
+body.light-mode .mobile-menu-overlay { background: rgba(240,244,248,0.97); }
+body.light-mode .mob-menu-item { border-color: rgba(0,0,0,0.07); color: var(--text-1); }
+body.light-mode .mob-menu-item:hover { background: rgba(6,182,212,0.07); }
+body.light-mode .mob-menu-section-label { color: var(--text-3); }
+body.light-mode .hamburger-btn { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.09); }
+body.light-mode .hamburger-btn span { background: var(--text-2); }
+body.light-mode .sidebar-group-header { background: linear-gradient(135deg,rgba(255,255,255,0.75) 0%,rgba(255,255,255,0.50) 100%); border-color: rgba(0,0,0,0.09); }
+body.light-mode .sidebar-video-item { background: linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(255,255,255,0.45) 100%); border-color: rgba(0,0,0,0.07); }
+body.light-mode .sidebar-video-item.watched { background: rgba(16,185,129,0.07); border-color: rgba(16,185,129,0.20); }
+body.light-mode .sidebar-video-item.playing { background: rgba(6,182,212,0.10); border-color: rgba(6,182,212,0.30); }
+body.light-mode .playlist-sidebar-wrap { background: linear-gradient(135deg,rgba(255,255,255,0.60) 0%,rgba(255,255,255,0.40) 100%); border-color: rgba(0,0,0,0.09); }
+body.light-mode .cinema-player-shell { background: rgba(255,255,255,0.80); border-color: rgba(0,0,0,0.09); }
+body.light-mode .cinema-meta-bar { background: rgba(240,244,248,0.92); border-color: rgba(0,0,0,0.08); }
+body.light-mode .cinema-action-strip { background: rgba(240,244,248,0.88); border-color: rgba(0,0,0,0.07); }
+body.light-mode .cinema-ambient-btn { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.09); color: var(--text-2); }
+body.light-mode .cinema-ambient-btn.on { background: rgba(99,102,241,0.12); border-color: rgba(99,102,241,0.35); color: var(--indigo); }
+body.light-mode .cinema-dl-pill.pdf { background: rgba(251,113,133,0.08); border-color: rgba(251,113,133,0.25); }
+body.light-mode .cinema-dl-pill.exercise { background: rgba(245,158,11,0.08); border-color: rgba(245,158,11,0.25); }
+body.light-mode .cinema-sidebar { background: rgba(255,255,255,0.75); border-color: rgba(0,0,0,0.09); }
+body.light-mode .cinema-sidebar-head { background: linear-gradient(135deg,rgba(240,244,248,0.96) 0%,rgba(240,244,248,0.88) 100%); border-color: rgba(0,0,0,0.08); }
+body.light-mode .focus-btn { background: rgba(99,102,241,0.08); border-color: rgba(99,102,241,0.22); color: var(--indigo); }
+body.light-mode .focus-btn:hover { background: rgba(99,102,241,0.16); border-color: rgba(99,102,241,0.42); }
+body.light-mode .focus-btn.active { background: rgba(99,102,241,0.18); border-color: rgba(99,102,241,0.52); }
 
-/* ══ RESET ══ */
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0 }
 html { scroll-behavior:smooth; font-size:16px }
 body {
@@ -125,8 +136,6 @@ body {
   text-rendering: optimizeLegibility;
   transition: background 0.45s var(--ease-smooth), color 0.45s var(--ease-smooth);
 }
-
-/* ── IMPROVED ARABIC TYPOGRAPHY ── */
 h1,h2,h3 { font-family: 'Tajawal', sans-serif; font-weight: 800; letter-spacing: -0.02em; }
 p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-serif; font-weight: 400; }
 .nav-brand-ar, .card-title, .bc-title, .lesson-title { font-family: 'Tajawal', sans-serif; font-weight: 700; }
@@ -137,7 +146,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 ::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.09); border-radius:10px; transition: background 0.2s }
 ::-webkit-scrollbar-thumb:hover { background:rgba(255,255,255,0.18) }
 
-/* ══ MESH BACKGROUND ══ */
 .mesh-bg { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden }
 .mesh-bg::before {
   content:''; position:absolute; inset:0;
@@ -153,11 +161,9 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 @keyframes orb3{0%{transform:translate(0,0) scale(1) rotate(0deg)}50%{transform:translate(55px,-35px) scale(1.13) rotate(4deg)}100%{transform:translate(-42px,45px) scale(0.94) rotate(-5deg)}}
 @keyframes orb4{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-55px,-65px) scale(1.22)}}
 
-/* ══ AMBIENT OVERLAY ══ */
 .ambient-overlay { position:fixed;inset:0;z-index:900;background:rgba(0,0,0,0.94);pointer-events:none;opacity:0;transition:opacity 0.45s ease }
 .ambient-overlay.active { opacity:1 }
 
-/* ══ NAVBAR ══ */
 .navbar {
   position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);
   display:flex;align-items:center;justify-content:space-between;padding:0 28px;
@@ -173,7 +179,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
   border-bottom-color:rgba(6,182,212,0.10);
   box-shadow:0 1px 0 rgba(255,255,255,0.05),0 8px 40px rgba(0,0,0,0.48);
 }
-/* Animated bottom line on hover */
 .navbar::after {
   content:''; position:absolute; bottom:0; left:8%; right:8%; height:1px;
   background:linear-gradient(90deg,transparent,rgba(6,182,212,0.35),var(--indigo),rgba(6,182,212,0.35),transparent);
@@ -183,7 +188,7 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .navbar:hover::after { opacity:1 }
 @keyframes navLineShimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
 
-.nav-logo { display:flex;align-items:center;gap:13px;cursor:pointer;user-select:none;text-decoration:none }
+.nav-logo { display:flex;align-items:center;gap:13px;cursor:pointer;user-select:none;text-decoration:none;flex-shrink:0; }
 .nav-logo-hex {
   width:42px;height:42px;border-radius:12px;
   background:var(--cyan-dim);border:1px solid rgba(6,182,212,0.28);
@@ -228,7 +233,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .social-btn.ig:hover { box-shadow:0 0 20px rgba(244,63,94,0.42); color:#fb7185; border-color:rgba(251,113,133,0.28) }
 .social-btn:active { transform:scale(0.88) !important; transition:transform 0.08s ease !important }
 
-/* ══ THEME TOGGLE BUTTONS ══ */
 .nav-divider { width:1px; height:22px; background:var(--glass-border-bright); margin:0 4px; flex-shrink:0 }
 .toggle-btn {
   position:relative; display:inline-flex; align-items:center; justify-content:center;
@@ -253,11 +257,174 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .btn-sun.is-active { background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.45); box-shadow:0 0 16px rgba(245,158,11,0.22) }
 .btn-moon.is-active { background:rgba(6,182,212,0.15); border-color:rgba(6,182,212,0.45); box-shadow:0 0 16px rgba(6,182,212,0.20) }
 
-/* ══ LAYOUT ══ */
-.main-wrap { position:relative; z-index:1; padding-top:var(--nav-h); min-height:100vh }
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  padding: 10px;
+  transition: all 0.3s var(--ease-spring);
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.hamburger-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(6,182,212,0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.25s;
+  border-radius: inherit;
+}
+.hamburger-btn:hover::before { opacity: 1 }
+.hamburger-btn:hover { border-color: rgba(6,182,212,0.35); box-shadow: 0 0 18px rgba(6,182,212,0.15) }
+.hamburger-btn span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--text-1);
+  border-radius: 2px;
+  transition: transform 0.38s var(--ease-spring), opacity 0.25s ease, width 0.3s ease;
+  transform-origin: center;
+}
+.hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg) }
+.hamburger-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0) }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg) }
+.hamburger-btn:active { transform: scale(0.88) }
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: rgba(2,6,23,0.97);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border-top: 1px solid rgba(6,182,212,0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  gap: 8px;
+  overflow-y: auto;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.42s var(--ease-out), opacity 0.35s ease;
+}
+.mobile-menu-overlay.open {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
+}
+.mob-menu-section-label {
+  font-family: var(--font-en);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  padding: 16px 12px 8px;
+  display: block;
+}
+.mob-menu-section-label:first-child { padding-top: 0 }
+.mob-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-family: var(--font-ar);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-1);
+  border: 1px solid rgba(255,255,255,0.055);
+  background: rgba(255,255,255,0.025);
+  text-decoration: none;
+  transition: all 0.28s var(--ease-spring);
+  -webkit-tap-highlight-color: transparent;
+}
+.mob-menu-item:hover, .mob-menu-item:active {
+  background: rgba(6,182,212,0.10);
+  border-color: rgba(6,182,212,0.25);
+  color: var(--cyan);
+  transform: translateX(-4px);
+}
+.mob-menu-item .mob-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.mob-icon.tg  { background: rgba(96,165,250,0.12); color: #60a5fa }
+.mob-icon.wa  { background: rgba(52,211,153,0.12); color: #34d399 }
+.mob-icon.ig  { background: rgba(251,113,133,0.12); color: #fb7185 }
+.mob-icon.sun { background: rgba(245,158,11,0.12); color: #f59e0b }
+.mob-icon.moon{ background: rgba(6,182,212,0.12); color: var(--cyan) }
+.mob-menu-theme-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 4px 0;
+}
+.mob-theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 16px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-ar);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.03);
+  color: var(--text-2);
+  transition: all 0.3s var(--ease-spring);
+  -webkit-tap-highlight-color: transparent;
+}
+.mob-theme-btn.light-active,
+.mob-theme-btn:hover:first-child {
+  background: rgba(245,158,11,0.12);
+  border-color: rgba(245,158,11,0.35);
+  color: #f59e0b;
+}
+.mob-theme-btn.dark-active,
+.mob-theme-btn:hover:last-child {
+  background: rgba(6,182,212,0.12);
+  border-color: rgba(6,182,212,0.35);
+  color: var(--cyan);
+}
+.mob-theme-btn:active { transform: scale(0.94) }
+.mob-menu-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--glass-border-bright), transparent);
+  margin: 8px 0;
+}
+
+.main-wrap {
+  position:relative; z-index:1;
+  padding-top: var(--nav-h);
+  min-height:100vh;
+}
 .container { max-width:1440px; margin:0 auto; padding:0 24px }
 
-/* ══ BREADCRUMB ══ */
 .breadcrumb-bar { padding:16px 24px; display:flex; align-items:center; gap:8px; flex-wrap:wrap }
 .bc-sep { color:var(--text-3); font-size:9px; transition:color 0.2s }
 .bc-item { font-size:12.5px; color:var(--text-3); cursor:pointer; transition:all 0.22s; padding:3px 6px; border-radius:6px }
@@ -281,12 +448,10 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .back-btn:hover::before { transform:translateX(0) }
 .back-btn:active { transform:scale(0.94) !important; transition:transform 0.08s ease !important }
 
-/* ══ VIEW TRANSITIONS ══ */
 .view { display:none }
 .view.active { display:block; animation:viewIn 0.45s var(--ease-out) both }
 @keyframes viewIn { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
 
-/* ══ STAGGER CHILDREN ══ */
 .cards-grid .track-card,
 .binary-grid .binary-card,
 .pdf-grid .pdf-card,
@@ -305,7 +470,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .cards-grid .track-card:nth-child(6),.pdf-grid .pdf-card:nth-child(6),.lessons-list .lesson-row:nth-child(6) { animation-delay:0.34s }
 .lessons-list .lesson-row:nth-child(n+7) { animation-delay:0.38s }
 
-/* ══ GLOBAL LOADER ══ */
 .global-loader {
   position:fixed;inset:0;z-index:9999;
   background:rgba(2,6,23,0.98);
@@ -342,7 +506,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
   100% {width:0%;margin-right:0%;background-position:200% 0}
 }
 
-/* ══ ERROR BANNER ══ */
 .error-banner {
   margin:24px;padding:20px 24px;border-radius:var(--radius-lg);
   background:var(--rose-dim);border:1px solid rgba(251,113,133,0.25);
@@ -361,7 +524,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .error-retry:hover { background:rgba(251,113,133,0.24); transform:translateY(-1px) }
 .error-retry:active { transform:scale(0.93) }
 
-/* ══ SKELETON ══ */
 #skeleton-loader { display:none }
 #skeleton-loader.active { display:block }
 .skeleton-wrap { padding:0 24px 40px; display:grid; gap:18px; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)) }
@@ -369,7 +531,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .skeleton-card::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,transparent 15%,rgba(255,255,255,0.048) 50%,transparent 85%); background-size:200% 100%; animation:shimmer 1.6s infinite }
 @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
 
-/* ══ HERO ══ */
 .hero { padding:64px 24px 52px; text-align:center; position:relative }
 .hero-eyebrow {
   display:inline-flex; align-items:center; gap:9px;
@@ -381,9 +542,10 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 }
 @keyframes eyebrowIn { from{opacity:0;transform:translateY(12px) scale(0.95)} to{opacity:1;transform:translateY(0) scale(1)} }
 .hero-title {
-  font-size:clamp(42px,6.5vw,78px); font-weight:900; line-height:1.06;
+  font-size:clamp(36px,6.5vw,78px); font-weight:900; line-height:1.06;
   margin-bottom:22px; letter-spacing:-0.04em;
   animation:titleIn 0.8s var(--ease-out) 0.2s both;
+  word-break: keep-all; overflow-wrap: break-word;
 }
 @keyframes titleIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 .hero-title .gradient-text {
@@ -394,7 +556,7 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 }
 @keyframes gradientShift { 0%{background-position:0% 50%} 100%{background-position:100% 50%} }
 .hero-sub {
-  font-size:clamp(15px,2.2vw,18px); color:var(--text-2); max-width:640px;
+  font-size:clamp(14px,2.2vw,18px); color:var(--text-2); max-width:640px;
   margin:0 auto 48px; line-height:1.80; font-weight:400;
   animation:heroSubIn 0.8s var(--ease-out) 0.35s both;
 }
@@ -415,15 +577,11 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .hero-badge.indigo { background:var(--indigo-dim); border:1px solid rgba(99,102,241,0.25); color:#a5b4fc }
 .hero-badge.emerald { background:var(--emerald-dim); border:1px solid rgba(16,185,129,0.25); color:var(--emerald) }
 
-/* ══ SECTION HEADER ══ */
 .section-head { padding:34px 24px 22px }
-.section-title { font-size:clamp(22px,3.2vw,36px); font-weight:900; letter-spacing:-0.03em }
+.section-title { font-size:clamp(20px,3.2vw,36px); font-weight:900; letter-spacing:-0.03em }
 .section-title span { color:var(--cyan) }
 .section-desc { font-size:14px; color:var(--text-2); margin-top:7px; font-weight:400; line-height:1.65 }
 
-/* ════════════════════════════════════════════════════════
-   GLASSMORPHIC CARDS — ENHANCED WITH TRENDIER ANIMATIONS
-   ══════════════════════════════════════════════════════ */
 .cards-grid { display:grid; gap:20px; padding:0 24px 44px; perspective:1600px; perspective-origin:50% 40% }
 .cols-3 { grid-template-columns:repeat(auto-fill,minmax(300px,1fr)) }
 .cols-4 { grid-template-columns:repeat(auto-fill,minmax(260px,1fr)) }
@@ -431,7 +589,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .binary-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:20px; padding:0 24px 44px; perspective:1600px }
 .pdf-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:18px; padding:0 24px 44px }
 
-/* ── TRACK CARD ── */
 .track-card {
   border-radius:var(--radius-xl); padding:28px 24px; cursor:pointer; position:relative; overflow:hidden;
   background:linear-gradient(135deg,rgba(255,255,255,0.055) 0%,rgba(255,255,255,0.014) 100%);
@@ -444,8 +601,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
   user-select:none;
   --card-glow:rgba(6,182,212,0.28); --card-border:rgba(6,182,212,0.45);
 }
-
-/* Animated gradient border on hover */
 .track-card::before {
   content:''; position:absolute; inset:-1px; border-radius:inherit;
   background:conic-gradient(from 0deg, transparent 0deg, var(--card-border) 90deg, transparent 180deg, var(--card-border) 270deg, transparent 360deg);
@@ -453,31 +608,19 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
   animation:borderRotate 4s linear infinite;
   z-index:0;
 }
-/* Glass sheen sweep */
 .track-card::after {
   content:''; position:absolute; top:0; left:-100%; width:55%; height:100%;
   background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.08) 25%,rgba(255,255,255,0.18) 50%,rgba(255,255,255,0.08) 75%,transparent 100%);
   transform:skewX(-18deg); pointer-events:none; z-index:10;
   opacity:0; transition:opacity 0.3s ease;
 }
-
-/* Inner glass highlight */
-.track-card-inner-top {
-  content:''; position:absolute; top:0; left:0; right:0; height:45%;
-  background:linear-gradient(180deg,rgba(255,255,255,0.09) 0%,rgba(255,255,255,0.03) 35%,transparent 100%);
-  border-radius:inherit; border-bottom-left-radius:0; border-bottom-right-radius:0;
-  pointer-events:none; z-index:1;
-}
-
 @keyframes borderRotate { to { transform:rotate(360deg) } }
-
 .track-card[data-theme="cyan"]    { --card-glow:rgba(6,182,212,0.30); --card-border:rgba(6,182,212,0.55) }
 .track-card[data-theme="indigo"]  { --card-glow:rgba(99,102,241,0.28); --card-border:rgba(99,102,241,0.55) }
 .track-card[data-theme="emerald"] { --card-glow:rgba(16,185,129,0.26); --card-border:rgba(16,185,129,0.55) }
 .track-card[data-theme="amber"]   { --card-glow:rgba(245,158,11,0.26); --card-border:rgba(245,158,11,0.55) }
 .track-card[data-theme="rose"]    { --card-glow:rgba(251,113,133,0.26); --card-border:rgba(251,113,133,0.55) }
 .track-card[data-theme="violet"]  { --card-glow:rgba(167,139,250,0.26); --card-border:rgba(167,139,250,0.55) }
-
 @media(pointer:fine){
   .track-card:hover {
     transform:translateY(-14px) scale(1.018) rotateX(6deg) rotateY(-5deg);
@@ -495,8 +638,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
   box-shadow:inset 0 6px 16px rgba(0,0,0,0.44),inset 0 1px 2px rgba(255,255,255,0.10),0 6px 18px rgba(0,0,0,0.36) !important;
   transition:transform 0.08s ease,box-shadow 0.08s ease !important; filter:brightness(0.92);
 }
-
-/* ── CARD CONTENT ── */
 .card-icon {
   width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;
   margin-bottom:18px;font-size:22px;position:relative;z-index:2;
@@ -509,7 +650,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .card-icon.amber   { background:var(--amber-dim); color:var(--amber) }
 .card-icon.rose    { background:var(--rose-dim); color:var(--rose) }
 .card-icon.violet  { background:var(--violet-dim); color:var(--violet) }
-
 .card-title { font-size:17px; font-weight:800; margin-bottom:7px; line-height:1.26; letter-spacing:-0.02em; position:relative; z-index:2 }
 .card-sub { font-size:13px; color:var(--text-2); font-weight:400; line-height:1.65; position:relative; z-index:2 }
 .card-arrow {
@@ -532,7 +672,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .badge-rose    { background:var(--rose-dim); color:var(--rose); border:1px solid rgba(251,113,133,0.22) }
 .badge-violet  { background:var(--violet-dim); color:var(--violet); border:1px solid rgba(167,139,250,0.22) }
 
-/* ── BINARY CARDS ── */
 .binary-card {
   border-radius:var(--radius-xl); padding:40px 32px; cursor:pointer; text-align:center;
   background:linear-gradient(135deg,rgba(255,255,255,0.050) 0%,rgba(255,255,255,0.012) 100%);
@@ -561,7 +700,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
   .binary-card:hover .bc-icon-wrap { transform:translateY(-6px) scale(1.12); box-shadow:0 16px 34px rgba(0,0,0,0.3) }
 }
 .binary-card:active { transform:translateY(5px) scale(0.954) rotateX(-4deg) !important; box-shadow:inset 0 7px 18px rgba(0,0,0,0.48),0 5px 14px rgba(0,0,0,0.32) !important; transition:transform 0.08s ease !important }
-
 .bc-icon-wrap {
   width:78px; height:78px; border-radius:22px; margin:0 auto 24px;
   display:flex; align-items:center; justify-content:center; font-size:28px;
@@ -574,7 +712,123 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .bc-title { font-size:22px; font-weight:800; margin-bottom:10px; letter-spacing:-0.025em; position:relative; z-index:2 }
 .bc-desc  { font-size:13.5px; color:var(--text-2); line-height:1.68; position:relative; z-index:2 }
 
-/* ── LESSONS LIST ── */
+.lessons-grouped-wrap {
+  padding: 0 24px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.lesson-group-section {
+  border-radius: var(--radius-2xl);
+  border: 1px solid rgba(255,255,255,0.075);
+  background: linear-gradient(160deg, rgba(255,255,255,0.032) 0%, rgba(255,255,255,0.008) 100%);
+  backdrop-filter: blur(48px) saturate(200%);
+  -webkit-backdrop-filter: blur(48px) saturate(200%);
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.14),
+    0 20px 48px rgba(0,0,0,0.40);
+  overflow: hidden;
+  animation: groupSectionIn 0.55s var(--ease-out) both;
+}
+@keyframes groupSectionIn {
+  from { opacity:0; transform:translateY(20px) }
+  to   { opacity:1; transform:translateY(0) }
+}
+.lesson-group-section:nth-child(1) { animation-delay: 0.04s }
+.lesson-group-section:nth-child(2) { animation-delay: 0.12s }
+.lesson-group-section:nth-child(3) { animation-delay: 0.20s }
+.lesson-group-section:nth-child(4) { animation-delay: 0.28s }
+.lesson-group-section:nth-child(5) { animation-delay: 0.36s }
+.lesson-group-section:nth-child(6) { animation-delay: 0.44s }
+.lesson-group-section:nth-child(n+7) { animation-delay: 0.50s }
+.lesson-group-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 28px;
+  background: linear-gradient(
+    135deg,
+    rgba(6,182,212,0.10) 0%,
+    rgba(99,102,241,0.07) 50%,
+    rgba(167,139,250,0.05) 100%
+  );
+  border-bottom: 1px solid rgba(255,255,255,0.065);
+  position: relative;
+  overflow: hidden;
+}
+.lesson-group-header::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--cyan), var(--indigo), var(--violet));
+  border-radius: 0 var(--radius-2xl) var(--radius-2xl) 0;
+}
+.lesson-group-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+}
+.lesson-group-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, rgba(6,182,212,0.18), rgba(99,102,241,0.14));
+  border: 1px solid rgba(6,182,212,0.25);
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--cyan);
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(6,182,212,0.15), inset 0 1px 2px rgba(255,255,255,0.12);
+}
+.lesson-group-name {
+  flex: 1;
+  font-family: 'Tajawal', sans-serif;
+  font-size: clamp(14px, 2.2vw, 18px);
+  font-weight: 800;
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  min-width: 0;
+  word-break: break-word;
+}
+.lesson-group-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: rgba(6,182,212,0.10);
+  border: 1px solid rgba(6,182,212,0.20);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cyan);
+  font-family: var(--font-ar);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.lesson-group-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 16px 14px;
+}
+.lesson-group-rows .lesson-row {
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+}
+
 .lessons-list { padding:0 24px 44px; display:flex; flex-direction:column; gap:10px }
 .lesson-row {
   border-radius:var(--radius-lg); padding:18px 22px; cursor:pointer;
@@ -604,69 +858,699 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 }
 .lesson-row:active { transform:translateY(2px) scale(0.982) !important; box-shadow:inset 0 3px 8px rgba(0,0,0,0.28),0 3px 8px rgba(0,0,0,0.18) !important; transition:transform 0.07s ease,box-shadow 0.07s ease !important }
 .lesson-num { font-family:var(--font-en); font-size:11.5px; font-weight:800; color:var(--text-3); min-width:28px; transition:color 0.25s ease }
-.lesson-title { flex:1; font-size:15px; font-weight:700; line-height:1.36 }
-.lesson-meta { font-size:12px; color:var(--text-2); display:flex; align-items:center; gap:5px; margin-top:4px }
-.lesson-chevron { color:var(--text-3); font-size:12px; margin-right:auto; margin-left:0; transition:transform 0.35s var(--ease-spring),color 0.25s ease }
+.lesson-title { flex:1; font-size:15px; font-weight:700; line-height:1.36; word-break:break-word }
+.lesson-meta { font-size:12px; color:var(--text-2); display:flex; align-items:center; gap:5px; margin-top:4px; flex-wrap:wrap }
+.lesson-chevron { color:var(--text-3); font-size:12px; margin-right:auto; margin-left:0; transition:transform 0.35s var(--ease-spring),color 0.25s ease; flex-shrink:0 }
 .lesson-row:hover .lesson-chevron { color:var(--cyan); transform:translateX(-5px) }
 
-/* ── VIDEO PLAYLIST ── */
-.playlist-container { padding:0 24px 44px; display:grid; grid-template-columns:1fr; gap:14px }
-@media(min-width:768px) { .playlist-container { grid-template-columns:1fr 360px } }
-.playlist-main { display:flex; flex-direction:column; gap:12px }
-.player-wrap { position:relative }
-.player-inner {
-  border-radius:var(--radius-xl); overflow:hidden; position:relative; background:#000; aspect-ratio:16/9;
-  box-shadow:0 32px 64px rgba(0,0,0,0.64),0 0 0 1px rgba(255,255,255,0.06);
-  transition:box-shadow 0.4s ease;
-}
-.player-inner:hover { box-shadow:0 40px 80px rgba(0,0,0,0.72),0 0 50px rgba(6,182,212,0.10),0 0 0 1px rgba(6,182,212,0.14) }
-.player-inner iframe { width:100%; height:100%; border:none; display:block }
-.player-controls { display:flex; align-items:center; justify-content:space-between; padding:13px 18px }
-.ambient-toggle {
-  display:inline-flex; align-items:center; gap:9px; padding:10px 18px; border-radius:12px;
-  cursor:pointer; background:rgba(255,255,255,0.042); border:1px solid var(--glass-border);
-  color:var(--text-2); font-size:13px; font-weight:600; font-family:var(--font-ar);
-  transition:all 0.3s var(--ease-spring); user-select:none;
-}
-.ambient-toggle:hover { background:rgba(99,102,241,0.12); color:var(--text-1); border-color:rgba(99,102,241,0.30); transform:translateY(-1px) }
-.ambient-toggle:active { transform:scale(0.93) }
-.ambient-toggle.on { background:rgba(99,102,241,0.16); border-color:rgba(99,102,241,0.50); color:#a5b4fc }
+/* ══════════════════════════════════════════════════════════════════════════
+   CINEMATIC VIDEO PAGE — EXPANDED SIDEBAR + FULL-WIDTH CARDS
+   ══════════════════════════════════════════════════════════════════════════ */
 
-.player-actions { display:flex; gap:10px; flex-wrap:wrap; padding:0 24px 22px }
-.dl-btn {
-  display:inline-flex; align-items:center; gap:10px; padding:12px 22px; border-radius:13px;
-  cursor:pointer; font-size:13.5px; font-weight:700; font-family:var(--font-ar);
-  transition:all 0.3s var(--ease-spring); user-select:none; border:none; outline:none; will-change:transform;
-  position:relative; overflow:hidden;
+#view-playlist .section-head {
+  padding: 28px 24px 16px;
 }
-.dl-btn::before {
-  content:''; position:absolute; inset:0;
-  background:radial-gradient(circle at 50% 0%, rgba(255,255,255,0.18), transparent 70%);
-  opacity:0; transition:opacity 0.25s; border-radius:inherit;
+#view-playlist .section-title {
+  font-size: clamp(17px, 2.5vw, 28px);
 }
-.dl-btn:hover { transform:translateY(-3px); box-shadow:0 10px 26px rgba(0,0,0,0.30) }
-.dl-btn:hover::before { opacity:1 }
-.dl-btn:active { transform:scale(0.93) !important; transition:transform 0.08s ease !important }
-.dl-btn.pdf      { background:rgba(251,113,133,0.10); border:1px solid rgba(251,113,133,0.24); color:var(--rose) }
-.dl-btn.exercise { background:var(--amber-dim); border:1px solid rgba(245,158,11,0.24); color:var(--amber) }
 
-.video-item {
-  display:flex; align-items:center; gap:13px; padding:13px 16px; border-radius:13px; cursor:pointer;
-  background:linear-gradient(135deg,rgba(255,255,255,0.030) 0%,rgba(255,255,255,0.008) 100%);
-  border:1px solid rgba(255,255,255,0.074);
-  backdrop-filter:blur(30px);
-  box-shadow:inset 0 1px 1px rgba(255,255,255,0.12),0 8px 20px rgba(0,0,0,0.24);
-  transition:transform 0.4s var(--ease-spring),border-color 0.25s ease,box-shadow 0.35s ease; user-select:none;
+/* ── OUTER CONTAINER ── */
+.playlist-container {
+  padding: 0 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+  max-width: 1750px;
+  margin: 0 auto;
 }
-@media(pointer:fine){
-  .video-item:hover { transform:translateY(-5px) scale(1.007); border-color:rgba(6,182,212,0.30); box-shadow:inset 0 1px 2px rgba(255,255,255,0.16),0 20px 44px rgba(0,0,0,0.38),0 0 32px rgba(6,182,212,0.10) }
+@media (min-width: 1024px) {
+  .playlist-container {
+    grid-template-columns: minmax(0, 9fr) minmax(320px, 3fr);
+    gap: 28px;
+    padding: 0 32px 60px;
+  }
 }
-.video-item:active { transform:translateY(2px) scale(0.980) !important; transition:transform 0.07s ease !important }
-.video-item.selected { border-color:var(--cyan); background:rgba(6,182,212,0.10); box-shadow:inset 0 1px 2px rgba(6,182,212,0.14),0 0 24px rgba(6,182,212,0.12) }
-.vi-thumb { width:58px; height:42px; border-radius:9px; background:rgba(5,15,30,0.8); display:flex; align-items:center; justify-content:center; flex-shrink:0; overflow:hidden }
-.vi-title { font-size:13.5px; font-weight:700; flex:1; line-height:1.36 }
-.vi-teacher { font-size:11.5px; color:var(--text-2); margin-top:3px }
-.vi-dur { font-family:var(--font-en); font-size:11px; color:var(--text-3); white-space:nowrap }
+@media (min-width: 1280px) {
+  .playlist-container {
+    grid-template-columns: minmax(0, 9fr) minmax(360px, 3fr);
+    gap: 36px;
+    padding: 0 40px 60px;
+  }
+}
+@media (min-width: 1600px) {
+  .playlist-container {
+    grid-template-columns: minmax(0, 9fr) minmax(400px, 3fr);
+    gap: 40px;
+  }
+}
+
+.playlist-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+/* ── CINEMA PLAYER SHELL ── */
+.cinema-player-shell {
+  border-radius: var(--radius-2xl);
+  background: linear-gradient(160deg, rgba(255,255,255,0.048) 0%, rgba(255,255,255,0.012) 100%);
+  border: 1px solid rgba(255,255,255,0.095);
+  backdrop-filter: blur(56px) saturate(220%);
+  -webkit-backdrop-filter: blur(56px) saturate(220%);
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.20),
+    0 40px 80px rgba(0,0,0,0.60),
+    0 0 0 1px rgba(6,182,212,0.06);
+  overflow: hidden;
+  transition: box-shadow 0.5s ease, border-color 0.4s ease;
+  position: relative;
+}
+.cinema-player-shell:hover {
+  border-color: rgba(6,182,212,0.16);
+  box-shadow:
+    inset 0 1px 3px rgba(255,255,255,0.24),
+    0 56px 100px rgba(0,0,0,0.68),
+    0 0 60px rgba(6,182,212,0.08),
+    0 0 0 1px rgba(6,182,212,0.14);
+}
+.cinema-player-shell::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(6,182,212,0.55), var(--indigo), rgba(6,182,212,0.55), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── 16:9 RATIO IFRAME WRAPPER (fullscreen target) ── */
+.player-ratio-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  overflow: hidden;
+}
+.player-ratio-box iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+.player-ratio-box:fullscreen,
+.player-ratio-box:-webkit-full-screen,
+.player-ratio-box:-moz-full-screen,
+.player-ratio-box:-ms-fullscreen {
+  width: 100vw;
+  height: 100vh;
+  aspect-ratio: unset;
+  border-radius: 0;
+  background: #000;
+}
+.player-ratio-box:fullscreen iframe,
+.player-ratio-box:-webkit-full-screen iframe,
+.player-ratio-box:-moz-full-screen iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── EXIT FOCUS BUTTON ── */
+.focus-exit-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: var(--radius-md);
+  background: rgba(2,6,23,0.88);
+  border: 1px solid rgba(6,182,212,0.35);
+  color: var(--text-1);
+  font-family: var(--font-ar);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.50), 0 0 20px rgba(6,182,212,0.12);
+  transition: all 0.3s var(--ease-spring);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: all;
+  opacity: 0;
+  transform: translateY(-8px);
+}
+.player-ratio-box.in-focus .focus-exit-btn {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  animation: focusExitBtnIn 0.4s var(--ease-spring) both;
+}
+@keyframes focusExitBtnIn {
+  from { opacity:0; transform:translateY(-12px) scale(0.92) }
+  to   { opacity:1; transform:translateY(0) scale(1) }
+}
+.focus-exit-btn:hover {
+  background: rgba(6,182,212,0.22);
+  border-color: rgba(6,182,212,0.60);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.50), 0 0 28px rgba(6,182,212,0.22);
+  transform: translateY(-1px);
+}
+.focus-exit-btn:active { transform: scale(0.93) !important }
+
+/* ── CINEMA META BAR ── */
+.cinema-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  background: rgba(2,6,23,0.55);
+  border-top: 1px solid rgba(255,255,255,0.065);
+  flex-wrap: wrap;
+  min-height: 54px;
+}
+.cinema-now-playing {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+.cinema-now-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
+  flex-shrink: 0;
+  animation: pulse-glow 2.4s ease-in-out infinite;
+}
+.cinema-now-text {
+  font-family: var(--font-ar);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* ── PREMIUM FOCUS MODE BUTTON ── */
+.cinema-ambient-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(99,102,241,0.10) 0%, rgba(6,182,212,0.06) 100%);
+  border: 1px solid rgba(99,102,241,0.22);
+  color: #a5b4fc;
+  font-size: 12.5px;
+  font-weight: 700;
+  font-family: var(--font-ar);
+  transition: all 0.32s var(--ease-spring);
+  user-select: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(99,102,241,0.10), inset 0 1px 1px rgba(255,255,255,0.07);
+}
+.cinema-ambient-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(99,102,241,0.20), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.25s;
+  border-radius: inherit;
+}
+.cinema-ambient-btn:hover::before { opacity: 1 }
+.cinema-ambient-btn:hover {
+  background: linear-gradient(135deg, rgba(99,102,241,0.20) 0%, rgba(6,182,212,0.12) 100%);
+  border-color: rgba(99,102,241,0.48);
+  box-shadow: 0 0 20px rgba(99,102,241,0.20), 0 4px 14px rgba(0,0,0,0.28);
+  transform: translateY(-2px);
+  color: #c4b5fd;
+}
+.cinema-ambient-btn:active { transform: scale(0.93) }
+.cinema-ambient-btn.on {
+  background: linear-gradient(135deg, rgba(99,102,241,0.28) 0%, rgba(6,182,212,0.16) 100%);
+  border-color: rgba(99,102,241,0.60);
+  color: #c4b5fd;
+  box-shadow: 0 0 28px rgba(99,102,241,0.30), 0 0 0 1px rgba(99,102,241,0.30), inset 0 1px 2px rgba(255,255,255,0.12);
+}
+.cinema-ambient-btn.on .focus-icon-svg {
+  animation: focusIconSpin 3s linear infinite;
+}
+@keyframes focusIconSpin {
+  0%, 100% { transform: rotate(0deg) scale(1) }
+  50% { transform: rotate(180deg) scale(1.1) }
+}
+.focus-icon-svg { transition: transform 0.4s var(--ease-spring); display: block; flex-shrink: 0; }
+
+/* ── CINEMA ACTION STRIP ── */
+.cinema-action-strip {
+  display: flex;
+  gap: 12px;
+  padding: 16px 4px 0;
+  flex-wrap: wrap;
+}
+.cinema-dl-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 24px;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-ar);
+  transition: all 0.32s var(--ease-spring);
+  user-select: none;
+  border: none;
+  outline: none;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  flex: 1;
+  justify-content: center;
+  min-width: 0;
+}
+.cinema-dl-pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.20), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.25s;
+  border-radius: inherit;
+}
+.cinema-dl-pill:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.32) }
+.cinema-dl-pill:hover::before { opacity: 1 }
+.cinema-dl-pill:active { transform: scale(0.93) !important; transition: transform 0.08s ease !important }
+.cinema-dl-pill.pdf {
+  background: rgba(251,113,133,0.11);
+  border: 1px solid rgba(251,113,133,0.26);
+  color: var(--rose);
+}
+.cinema-dl-pill.pdf:hover {
+  background: rgba(251,113,133,0.20);
+  border-color: rgba(251,113,133,0.50);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.32), 0 0 24px rgba(251,113,133,0.16);
+}
+.cinema-dl-pill.exercise {
+  background: var(--amber-dim);
+  border: 1px solid rgba(245,158,11,0.26);
+  color: var(--amber);
+}
+.cinema-dl-pill.exercise:hover {
+  background: rgba(245,158,11,0.20);
+  border-color: rgba(245,158,11,0.50);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.32), 0 0 24px rgba(245,158,11,0.14);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SIDEBAR — FULL WIDTH CARDS, GLASSMORPHIC, ELITE MICRO-UX
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.playlist-sidebar-wrap {
+  border-radius: var(--radius-xl);
+  background: linear-gradient(160deg, rgba(255,255,255,0.040) 0%, rgba(255,255,255,0.010) 100%);
+  border: 1px solid rgba(255,255,255,0.085);
+  backdrop-filter: blur(48px) saturate(200%);
+  -webkit-backdrop-filter: blur(48px) saturate(200%);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.12), 0 20px 48px rgba(0,0,0,0.40);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: calc(var(--nav-h) + 16px);
+  width: 100%;
+}
+
+.sidebar-header {
+  padding: 20px 22px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.065);
+  background: linear-gradient(135deg, rgba(6,182,212,0.08) 0%, rgba(99,102,241,0.05) 100%);
+  position: relative;
+}
+.sidebar-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(6,182,212,0.30), transparent);
+}
+.sidebar-title {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-1);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+  word-break: break-word;
+  line-height: 1.4;
+}
+.sidebar-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.sidebar-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-2);
+  font-family: var(--font-ar);
+}
+.sidebar-progress-bar-wrap {
+  margin-top: 12px;
+  height: 5px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.sidebar-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--emerald), var(--cyan));
+  border-radius: 99px;
+  transition: width 0.6s var(--ease-smooth);
+  position: relative;
+}
+.sidebar-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35));
+  border-radius: 99px;
+}
+.sidebar-progress-label {
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--emerald);
+  font-weight: 700;
+  font-family: var(--font-ar);
+}
+
+/* ── Scrollable list ── */
+.sidebar-scroll {
+  overflow-y: auto;
+  max-height: 520px;
+  padding: 10px 0 16px;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .sidebar-scroll {
+    max-height: calc(100vh - var(--nav-h) - 220px);
+  }
+}
+.sidebar-scroll::-webkit-scrollbar { width: 3px }
+.sidebar-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.09); border-radius: 99px }
+
+/* ── Sidebar Group Header ── */
+.sidebar-group-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 18px 12px;
+  background: linear-gradient(135deg, rgba(6,182,212,0.07) 0%, rgba(99,102,241,0.04) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.050);
+  border-top: 1px solid rgba(255,255,255,0.035);
+  position: relative;
+  cursor: default;
+  width: 100%;
+}
+.sidebar-group-header::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--cyan), var(--indigo));
+  border-radius: 0;
+}
+.sidebar-group-num {
+  min-width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(6,182,212,0.14);
+  border: 1px solid rgba(6,182,212,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-en);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--cyan);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.sidebar-group-name {
+  flex: 1;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-1);
+  line-height: 1.42;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.sidebar-group-count-badge {
+  font-family: var(--font-ar);
+  font-size: 10.5px;
+  color: var(--text-3);
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 3px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SIDEBAR VIDEO ITEM — W-FULL, GLASSMORPHIC, ELITE HOVER, LIFT EFFECT
+   ══════════════════════════════════════════════════════════════════════════ */
+.sidebar-video-item {
+  /* FORCE FULL WIDTH — block layout with box-sizing */
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  /* Vertical breathing room */
+  padding: 14px 16px;
+  /* Full-width: use margin 0 with width 100% */
+  margin: 3px 12px;
+  width: calc(100% - 24px);
+  box-sizing: border-box;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  /* Glassmorphic backdrop */
+  background: rgba(14, 21, 45, 0.40);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  /* Razor-sharp border */
+  border: 1px solid rgba(255,255,255,0.05);
+  /* Premium transitions */
+  transition: all 0.30s var(--ease-spring);
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  /* Inner flex: icon + content + badge all justified */
+  justify-content: flex-start;
+}
+/* Subtle inner highlight line on top */
+.sidebar-video-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  pointer-events: none;
+}
+/* HOVER: lift + cyan glow border + neon shadow pulse */
+.sidebar-video-item:hover {
+  background: rgba(6,182,212,0.08);
+  border-color: rgba(6,182,212,0.30);
+  transform: translateY(-2px) translateX(-1px);
+  box-shadow:
+    0 8px 24px rgba(0,0,0,0.28),
+    0 0 20px rgba(6,182,212,0.15);
+}
+.sidebar-video-item:active {
+  transform: scale(0.970) !important;
+  transition: transform 0.08s ease !important;
+}
+.sidebar-video-item.playing {
+  background: rgba(6,182,212,0.12) !important;
+  border-color: rgba(6,182,212,0.38) !important;
+  box-shadow: inset 0 0 20px rgba(6,182,212,0.04), 0 0 14px rgba(6,182,212,0.08) !important;
+}
+.sidebar-video-item.playing::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--cyan);
+  border-radius: 0;
+}
+.sidebar-video-item.watched {
+  background: rgba(16,185,129,0.06) !important;
+  border-color: rgba(16,185,129,0.16) !important;
+}
+.sidebar-video-item.watched .svi-icon-wrap {
+  background: rgba(16,185,129,0.14) !important;
+  border-color: rgba(16,185,129,0.26) !important;
+}
+.sidebar-video-item.playing.watched {
+  background: rgba(6,182,212,0.12) !important;
+  border-color: rgba(6,182,212,0.38) !important;
+}
+
+.svi-icon-wrap {
+  width: 34px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(6,182,212,0.10);
+  border: 1px solid rgba(6,182,212,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 10px;
+  color: var(--cyan);
+  transition: all 0.3s var(--ease-spring);
+  position: relative;
+  margin-top: 2px;
+}
+.sidebar-video-item.playing .svi-icon-wrap {
+  background: rgba(6,182,212,0.20) !important;
+  border-color: rgba(6,182,212,0.44) !important;
+  animation: sviPulse 1.8s ease-in-out infinite;
+}
+@keyframes sviPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(6,182,212,0.30) }
+  50%       { box-shadow: 0 0 0 5px rgba(6,182,212,0) }
+}
+
+/* Content: flex:1 so title takes all available width */
+.svi-content {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+.svi-title {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.48;
+  /* CRITICAL: allow title to wrap naturally and breathe */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  hyphens: auto;
+  color: var(--text-1);
+  transition: color 0.2s;
+  /* No truncation — full title visible */
+  display: block;
+  width: 100%;
+}
+.sidebar-video-item.playing .svi-title { color: var(--cyan) }
+.svi-meta {
+  font-size: 11px;
+  color: var(--text-3);
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.svi-watched-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--emerald-dim);
+  border: 1px solid rgba(16,185,129,0.30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 8px;
+  color: var(--emerald);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.35s var(--ease-spring), transform 0.35s var(--ease-spring);
+  margin-top: 3px;
+}
+.sidebar-video-item.watched .svi-watched-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.svi-playing-label {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--cyan);
+  font-family: var(--font-en);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.sidebar-video-item.playing .svi-playing-label { display: flex }
+.svi-equalizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5px;
+  height: 10px;
+}
+.svi-equalizer span {
+  display: block;
+  width: 2px;
+  background: var(--cyan);
+  border-radius: 1px;
+  animation: equalizerBar 0.8s ease-in-out infinite alternate;
+}
+.svi-equalizer span:nth-child(1) { height: 4px; animation-delay: 0s }
+.svi-equalizer span:nth-child(2) { height: 8px; animation-delay: 0.15s }
+.svi-equalizer span:nth-child(3) { height: 6px; animation-delay: 0.30s }
+@keyframes equalizerBar {
+  from { transform: scaleY(0.4) }
+  to   { transform: scaleY(1) }
+}
+
+.player-wrap { display: none !important }
+.player-actions { display: none !important }
+.player-inner { display: none !important }
+.ambient-toggle { display: none !important }
 
 /* ── PDF CARDS ── */
 .pdf-card {
@@ -694,7 +1578,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
   .pdf-card:hover::after { opacity:1 }
 }
 .pdf-card:active { transform:translateY(3px) scale(0.970) rotateX(-2deg) !important; box-shadow:inset 0 4px 12px rgba(0,0,0,0.36),0 4px 12px rgba(0,0,0,0.26) !important; transition:transform 0.08s ease !important }
-
 .pdf-top { display:flex; align-items:center; gap:14px }
 .pdf-icon {
   width:50px; height:50px; border-radius:13px; background:var(--rose-dim);
@@ -702,7 +1585,7 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
   transition:transform 0.4s var(--ease-spring);
 }
 .pdf-card:hover .pdf-icon { transform:rotate(-8deg) scale(1.10) }
-.pdf-title { font-size:14.5px; font-weight:700; line-height:1.32 }
+.pdf-title { font-size:14.5px; font-weight:700; line-height:1.32; word-break:break-word }
 .pdf-meta { font-size:11.5px; color:var(--text-2); margin-top:4px; display:flex; gap:8px; flex-wrap:wrap }
 .open-pdf-btn {
   display:flex; align-items:center; justify-content:center; gap:8px;
@@ -721,7 +1604,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .open-pdf-btn:hover::before { opacity:1 }
 .open-pdf-btn:active { transform:scale(0.92) !important; transition:transform 0.08s ease !important }
 
-/* ── PDF VIEWER ── */
 .pdf-viewer-container {
   margin:0 24px 32px; border-radius:var(--radius-xl); overflow:hidden;
   background:rgba(10,20,38,0.84); border:1px solid var(--glass-border); display:none;
@@ -739,7 +1621,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .close-viewer-btn:active { transform:scale(0.88) }
 .pdf-viewer-frame { width:100%; height:680px; border:none; background:#12172a; display:block }
 
-/* ── COMING SOON ── */
 .coming-soon-card {
   grid-column:1/-1;
   border-radius:var(--radius-xl); padding:64px 44px; text-align:center;
@@ -764,7 +1645,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
   color:#a5b4fc; font-size:12px; font-weight:700; font-family:var(--font-en); margin-top:20px;
 }
 
-/* ── SUBJECT FILTER PILLS ── */
 .subject-filter { padding:0 24px 24px; display:flex; flex-wrap:wrap; gap:10px }
 .subj-pill {
   padding:10px 22px; border-radius:100px; font-size:13px; font-weight:700;
@@ -776,13 +1656,11 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .subj-pill.active { background:rgba(6,182,212,0.16); border-color:var(--cyan); color:var(--cyan); box-shadow:0 0 20px rgba(6,182,212,0.18) }
 .subj-pill:active { transform:scale(0.92) }
 
-/* ── GLOW DOT ── */
 .glow-dot { display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--cyan); box-shadow:0 0 10px var(--cyan); animation:pulse-glow 2.4s ease-in-out infinite }
 @keyframes pulse-glow { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.28;transform:scale(0.76)} }
 
 .divider { height:1px; background:linear-gradient(90deg,transparent,var(--glass-border-bright),transparent); margin:10px 24px }
 
-/* ── RESUME CHIP ── */
 .resume-chip {
   position:fixed; bottom:24px; right:24px; z-index:999;
   background:rgba(10,18,34,0.94); border:1px solid rgba(6,182,212,0.30);
@@ -805,7 +1683,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 }
 .resume-close:hover { background:var(--rose-dim); color:var(--rose); transform:rotate(90deg) scale(1.2) }
 
-/* ── FOOTER ── */
 .footer { padding:44px 24px 34px; text-align:center; border-top:1px solid var(--glass-border); margin-top:64px }
 .footer-brand { font-family:var(--font-en); font-size:15px; font-weight:800; color:var(--text-3); letter-spacing:2.5px; margin-bottom:10px; text-transform:uppercase }
 .footer-text { font-size:13px; color:var(--text-3); line-height:1.80; font-weight:400 }
@@ -813,39 +1690,35 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 .footer-link { font-size:12.5px; color:var(--text-3); text-decoration:none; transition:color 0.2s; font-weight:500 }
 .footer-link:hover { color:var(--cyan) }
 
-/* ══ MOBILE TOUCH OPTIMIZATIONS ══ */
 @media(pointer:coarse){
-  /* Larger tap targets on mobile */
   .track-card { padding:24px 20px; min-height:130px }
   .lesson-row { padding:18px 18px; gap:14px }
-  .dl-btn { padding:14px 22px; font-size:14.5px }
   .social-btn { width:40px; height:40px }
   .toggle-btn { width:40px; height:40px }
   .open-pdf-btn { padding:13px 22px; font-size:14px }
   .subj-pill { padding:12px 24px; font-size:14px }
-
-  /* Active states for touch - feel punchy */
+  .sidebar-video-item { padding: 14px 14px }
+  .cinema-dl-pill { padding: 15px 20px; font-size: 14.5px }
+  .cinema-ambient-btn { padding: 11px 18px; font-size: 13px }
   .track-card:active { transform:scale(0.950) translateY(3px) !important; transition:transform 0.10s ease !important; filter:brightness(0.90) }
   .binary-card:active { transform:scale(0.944) translateY(4px) !important; transition:transform 0.10s ease !important }
   .lesson-row:active { transform:scale(0.975) translateY(2px) !important; transition:transform 0.09s ease !important }
   .pdf-card:active { transform:scale(0.960) translateY(2px) !important; transition:transform 0.09s ease !important }
-  .video-item:active { transform:scale(0.970) translateY(2px) !important; transition:transform 0.09s ease !important }
-  .dl-btn:active { transform:scale(0.924) !important }
+  .sidebar-video-item:active { transform:scale(0.965) !important; transition:transform 0.09s ease !important }
+  .cinema-dl-pill:active { transform:scale(0.924) !important }
   .back-btn:active { transform:scale(0.924) !important }
   .open-pdf-btn:active { transform:scale(0.920) !important }
   .subj-pill:active { transform:scale(0.880) !important }
   .social-btn:active { transform:scale(0.840) !important }
   .toggle-btn:active { transform:scale(0.840) !important }
-
-  /* No hover transforms on touch */
   .track-card:hover, .binary-card:hover, .pdf-card:hover,
-  .lesson-row:hover, .video-item:hover { transform:none }
+  .lesson-row:hover { transform:none }
   .track-card:hover::before, .binary-card:hover::before { animation:none; opacity:0 }
   .track-card:hover .card-icon { transform:none }
   .pdf-card:hover .pdf-icon { transform:none }
+  .sidebar-video-item:hover { transform:none }
 }
 
-/* ══ RESPONSIVE BREAKPOINTS ══ */
 @media(min-width:1200px){
   .cols-3 { grid-template-columns:repeat(3,1fr) }
   .cols-4 { grid-template-columns:repeat(4,1fr) }
@@ -857,15 +1730,24 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
   .cols-3,.cols-4,.binary-grid { grid-template-columns:repeat(2,1fr) }
   .pdf-grid { grid-template-columns:repeat(2,1fr) }
 }
+
 @media(max-width:767px){
   :root { --nav-h:62px }
   .navbar { padding:0 16px }
+  .hamburger-btn { display: flex }
+  .nav-socials { display: none }
   .hero { padding:44px 16px 36px }
+  .hero-title { font-size:clamp(32px,9.5vw,52px) }
   .section-head { padding:26px 16px 18px }
   .cards-grid,.binary-grid,.pdf-grid { padding:0 16px 32px; gap:13px }
   .lessons-list { padding:0 16px 32px; gap:9px }
-  .player-actions { padding:0 16px 18px }
-  .playlist-container { padding:0 16px 32px }
+  .lessons-grouped-wrap { padding:0 16px 36px; gap:18px }
+  .lesson-group-header { padding:16px 20px; gap:12px }
+  .lesson-group-num { min-width:40px; height:40px; font-size:14px; border-radius:11px }
+  .lesson-group-name { font-size:15px }
+  .lesson-group-rows { padding:8px 10px 12px }
+  .lesson-group-rows .lesson-row { padding:14px 16px }
+  .playlist-container { padding:0 14px 36px; gap:16px }
   .breadcrumb-bar { padding:12px 16px }
   .pdf-viewer-container { margin:0 16px 24px }
   .pdf-viewer-frame { height:500px }
@@ -874,38 +1756,60 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
   .binary-card { padding:32px 24px }
   .pdf-card { padding:18px }
   .lesson-row { padding:16px 16px }
-  .hero-title { font-size:clamp(34px,9.5vw,52px) }
   .cards-grid.cols-3,.cards-grid.cols-4,.cards-grid.cols-2 { grid-template-columns:1fr }
+  .binary-grid { grid-template-columns:1fr }
   .nav-divider { display:none }
-  /* Mobile hero badge layout */
   .hero-badge-row { gap:8px }
   .hero-badge { padding:7px 14px; font-size:12.5px }
-  /* Touch-friendly breadcrumb */
   .bc-item { padding:5px 8px }
   .back-btn { padding:10px 16px; font-size:13px }
+  .playlist-sidebar-wrap { position: static }
+  .sidebar-scroll { max-height: 380px }
+  #view-playlist .section-head { padding:20px 14px 12px }
+  .cinema-action-strip { padding: 12px 0 0; gap: 10px }
+  .cinema-meta-bar { padding: 11px 14px; gap: 8px }
+  .cinema-ambient-btn { padding: 9px 14px; font-size: 12px }
+  .focus-exit-btn { top: 12px; right: 12px; padding: 9px 16px; font-size: 12px }
+  .sidebar-video-item { margin: 3px 8px; width: calc(100% - 16px); }
 }
+
 @media(max-width:380px){
   .navbar { padding:0 12px }
   .nav-brand-ar { font-size:14px }
-  .hero-title { font-size:32px }
+  .hero-title { font-size:28px }
   .track-card { padding:20px 16px }
   .hero { padding:36px 14px 30px }
+  .lessons-grouped-wrap { padding:0 12px 28px; gap:14px }
+  .lesson-group-header { padding:14px 16px; gap:10px }
+  .lesson-group-count { display:none }
+  .coming-soon-card { padding:44px 20px }
+  .playlist-container { padding: 0 10px 28px }
+  .cinema-dl-pill { padding: 13px 14px; font-size: 13px }
+  .cinema-ambient-btn { padding: 8px 12px; font-size: 11.5px }
+  .sidebar-video-item { margin: 3px 6px; width: calc(100% - 12px); }
 }
+
 @media(prefers-reduced-motion:reduce){
-  .track-card,.binary-card,.pdf-card,.lesson-row,.video-item { transition:border-color 0.2s ease,box-shadow 0.2s ease !important }
-  .track-card:hover,.binary-card:hover,.pdf-card:hover,.lesson-row:hover,.video-item:hover { transform:none !important }
+  .track-card,.binary-card,.pdf-card,.lesson-row,.sidebar-video-item { transition:border-color 0.2s ease,box-shadow 0.2s ease !important }
+  .track-card:hover,.binary-card:hover,.pdf-card:hover,.lesson-row:hover { transform:none !important }
   .track-card::before,.binary-card::before,.pdf-card::before { display:none }
   .mesh-orb,.loader-hex,.loader-bar,.cs-icon,.glow-dot,.nav-logo-hex::after { animation:none !important }
   .hero-title .gradient-text { animation:none }
   .navbar::after { animation:none }
+  .lesson-group-section { animation:none }
+  .mobile-menu-overlay { transition:opacity 0.2s ease }
+  .svi-equalizer span { animation:none }
+  .sidebar-video-item.playing .svi-icon-wrap { animation:none }
+  .cinema-now-dot { animation:none }
+  .cinema-ambient-btn.on .focus-icon-svg { animation:none }
   @keyframes viewIn { from{opacity:0} to{opacity:1} }
   @keyframes cardFadeUp { from{opacity:0} to{opacity:1} }
+  @keyframes groupSectionIn { from{opacity:0} to{opacity:1} }
 }
 </style>
 </head>
 <body>
 
-<!-- MESH BG -->
 <div class="mesh-bg" aria-hidden="true">
   <div class="mesh-orb"></div>
   <div class="mesh-orb"></div>
@@ -913,10 +1817,8 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
   <div class="mesh-orb"></div>
 </div>
 
-<!-- AMBIENT OVERLAY -->
 <div class="ambient-overlay" id="ambientOverlay" aria-hidden="true"></div>
 
-<!-- GLOBAL LOADER -->
 <div class="global-loader" id="globalLoader">
   <div class="loader-hex">
     <svg width="28" height="28" viewBox="0 0 38 38" fill="none">
@@ -929,7 +1831,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
   <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
 </div>
 
-<!-- NAVBAR -->
 <nav class="navbar" id="navbar" role="navigation" aria-label="التنقل الرئيسي">
   <div class="nav-logo" onclick="goHome()" role="button" tabindex="0" aria-label="الرئيسية">
     <div class="nav-logo-hex" aria-hidden="true">
@@ -944,6 +1845,7 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
       <div class="nav-brand-en">Mosta9bali</div>
     </div>
   </div>
+
   <div class="nav-socials">
     <a href="#" class="social-btn tg" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a>
     <a href="#" class="social-btn wa" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
@@ -964,23 +1866,53 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
       </svg>
     </button>
   </div>
+
+  <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="القائمة" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
 
-<!-- MAIN WRAP -->
+<div class="mobile-menu-overlay" id="mobileMenu" role="dialog" aria-modal="true" aria-label="القائمة الرئيسية">
+  <span class="mob-menu-section-label">الوضع</span>
+  <div class="mob-menu-theme-row">
+    <button class="mob-theme-btn" id="mobBtnSun" onclick="setTheme('light'); closeMobileMenu()" aria-label="وضع النهار">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><line x1="12" y1="2" x2="12" y2="4.5"/><line x1="12" y1="19.5" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.92" y2="5.92"/><line x1="18.08" y1="18.08" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4.5" y2="12"/><line x1="19.5" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="5.92" y2="18.08"/><line x1="18.08" y1="5.92" x2="19.78" y2="4.22"/></svg>
+      وضع النهار
+    </button>
+    <button class="mob-theme-btn" id="mobBtnMoon" onclick="setTheme('dark'); closeMobileMenu()" aria-label="وضع الليل">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      وضع الليل
+    </button>
+  </div>
+  <div class="mob-menu-divider"></div>
+  <span class="mob-menu-section-label">تواصل معنا</span>
+  <a href="#" class="mob-menu-item" onclick="closeMobileMenu()">
+    <div class="mob-icon tg"><i class="fab fa-telegram" aria-hidden="true"></i></div>
+    Telegram
+  </a>
+  <a href="#" class="mob-menu-item" onclick="closeMobileMenu()">
+    <div class="mob-icon wa"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+    WhatsApp
+  </a>
+  <a href="#" class="mob-menu-item" onclick="closeMobileMenu()">
+    <div class="mob-icon ig"><i class="fab fa-instagram" aria-hidden="true"></i></div>
+    Instagram
+  </a>
+</div>
+
 <div class="main-wrap" role="main">
 <div class="container">
 
-  <!-- BREADCRUMB -->
   <nav class="breadcrumb-bar" id="breadcrumbBar" style="display:none" aria-label="مسار التنقل"></nav>
 
-  <!-- ERROR BANNER -->
   <div class="error-banner" id="errorBanner" role="alert">
     <i class="fas fa-exclamation-circle" style="color:var(--rose);font-size:20px;flex-shrink:0" aria-hidden="true"></i>
     <div class="error-banner-text" id="errorText">تعذّر تحميل البيانات. تحقق من رابط Google Sheets وأنه منشور بشكل عام.</div>
     <button class="error-retry" onclick="initApp()" aria-label="إعادة المحاولة">إعادة المحاولة</button>
   </div>
 
-  <!-- SKELETON -->
   <div id="skeleton-loader" aria-hidden="true">
     <div class="skeleton-wrap">
       <div class="skeleton-card"></div><div class="skeleton-card"></div>
@@ -989,7 +1921,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
     </div>
   </div>
 
-  <!-- VIEW: HOME -->
   <div id="view-home" class="view" role="region" aria-label="الصفحة الرئيسية">
     <section class="hero">
       <div class="hero-eyebrow">
@@ -1027,7 +1958,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
     </footer>
   </div>
 
-  <!-- VIEW: PRIMARY GRADES -->
   <div id="view-primary" class="view" role="region">
     <div class="section-head">
       <h2 class="section-title">السلك <span>الابتدائي</span></h2>
@@ -1036,7 +1966,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
     <div class="cards-grid cols-3" id="primary-grades-grid" role="list"></div>
   </div>
 
-  <!-- VIEW: PRIMARY SUBJECTS -->
   <div id="view-primary-subjects" class="view" role="region">
     <div class="section-head">
       <h2 class="section-title" id="ps-title">المواد <span>الدراسية</span></h2>
@@ -1045,7 +1974,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
     <div class="cards-grid cols-3" id="primary-subjects-grid" role="list"></div>
   </div>
 
-  <!-- VIEW: MIDDLE YEARS -->
   <div id="view-middle" class="view" role="region">
     <div class="section-head">
       <h2 class="section-title">السلك <span>الإعدادي</span></h2>
@@ -1054,7 +1982,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
     <div class="cards-grid cols-3" id="middle-years-grid" role="list"></div>
   </div>
 
-  <!-- VIEW: HIGH LEVELS -->
   <div id="view-high" class="view" role="region">
     <div class="section-head">
       <h2 class="section-title">الثانوي <span>والباكالوريا</span></h2>
@@ -1063,7 +1990,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
     <div class="cards-grid cols-3" id="high-levels-grid" role="list"></div>
   </div>
 
-  <!-- VIEW: BINARY -->
   <div id="view-binary" class="view" role="region">
     <div class="section-head">
       <h2 class="section-title">اختر <span>النوع</span></h2>
@@ -1072,7 +1998,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
     <div class="binary-grid" id="binary-grid" role="list"></div>
   </div>
 
-  <!-- VIEW: BAC TRACK SELECT -->
   <div id="view-track-select" class="view" role="region">
     <div class="section-head">
       <h2 class="section-title">اختر <span>المسار</span></h2>
@@ -1081,7 +2006,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
     <div class="binary-grid" id="track-select-grid" role="list"></div>
   </div>
 
-  <!-- VIEW: SUBJECTS -->
   <div id="view-subjects" class="view" role="region">
     <div class="section-head">
       <h2 class="section-title" id="subjects-title">المواد <span>الدراسية</span></h2>
@@ -1090,12 +2014,12 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
     <div class="cards-grid cols-3" id="subjects-grid" role="list"></div>
   </div>
 
-  <!-- VIEW: LESSONS LIST -->
   <div id="view-lessons" class="view" role="region">
     <div class="section-head">
       <h2 class="section-title" id="lessons-title">قائمة <span>الدروس</span></h2>
       <p class="section-desc">اختر درساً لعرض الشرح</p>
     </div>
+    <div id="lessons-grouped-container" class="lessons-grouped-wrap" style="display:none" role="list" aria-label="أقسام الدروس"></div>
     <div class="lessons-list" id="lessons-list" role="list"></div>
   </div>
 
@@ -1104,39 +2028,86 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
     <div class="section-head">
       <h2 class="section-title" id="playlist-title">مشاهدة <span>الدرس</span></h2>
     </div>
+
     <div class="playlist-container">
+
+      <!-- MAIN COLUMN -->
       <div class="playlist-main">
-        <div class="player-wrap" id="playerWrap">
-          <div class="player-inner">
+        <div class="cinema-player-shell">
+          <div class="player-ratio-box" id="playerRatioBox">
             <iframe id="yt-player" src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" title="مشغّل الفيديو"></iframe>
+            <button class="focus-exit-btn" id="focusExitBtn" onclick="exitFocusMode()" aria-label="الخروج من وضع التركيز">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/></svg>
+              الرجوع
+            </button>
           </div>
-          <div class="player-controls">
-            <div class="ambient-toggle" id="ambientToggle" onclick="toggleAmbient()" role="button" tabindex="0">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <div class="cinema-meta-bar">
+            <div class="cinema-now-playing">
+              <span class="cinema-now-dot" aria-hidden="true"></span>
+              <span class="cinema-now-text" id="nowPlayingLabel" aria-live="polite"></span>
+            </div>
+            <div class="cinema-ambient-btn" id="ambientToggle" onclick="toggleFocusMode()" role="button" tabindex="0" aria-label="وضع التركيز الكامل" aria-pressed="false">
+              <svg class="focus-icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+              </svg>
               وضع التركيز
             </div>
-            <div id="nowPlayingLabel" style="font-size:12.5px;color:var(--text-2);max-width:55%;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" aria-live="polite"></div>
           </div>
         </div>
-        <div class="player-actions">
-          <div class="dl-btn pdf" role="button" tabindex="0" id="pdfDlBtn">
+
+        <div class="cinema-action-strip">
+          <div class="cinema-dl-pill pdf" role="button" tabindex="0" id="pdfDlBtn">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
             تحميل ملخص PDF
           </div>
-          <div class="dl-btn exercise" onclick="alert('سيتم إضافة تمارين تطبيقية قريباً')" role="button" tabindex="0">
+          <div class="cinema-dl-pill exercise" onclick="alert('سيتم إضافة تمارين تطبيقية قريباً')" role="button" tabindex="0">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
             تمارين وفروض
           </div>
         </div>
+
+        <div style="display:none!important" aria-hidden="true">
+          <div class="player-wrap" id="playerWrap">
+            <div class="player-inner">
+              <iframe style="display:none"></iframe>
+            </div>
+            <div class="player-controls">
+              <div class="ambient-toggle"></div>
+            </div>
+          </div>
+          <div class="player-actions">
+            <div class="dl-btn pdf" id="_pdfDlBtnLegacy"></div>
+            <div class="dl-btn exercise"></div>
+          </div>
+        </div>
       </div>
-      <div class="playlist-sidebar">
-        <div style="font-size:13.5px;font-weight:700;padding:0 0 13px;color:var(--text-2);font-family:var(--font-ar);">الشروحات المتاحة</div>
-        <div id="video-list" style="display:flex;flex-direction:column;gap:9px;" role="list"></div>
+
+      <!-- SIDEBAR -->
+      <div class="playlist-sidebar-wrap" id="playlist-sidebar-wrap">
+        <div class="sidebar-header">
+          <div class="sidebar-title" id="sidebar-subject-title">محتوى المادة</div>
+          <div class="sidebar-meta">
+            <span class="sidebar-stat" id="sidebar-total-stat">
+              <i class="fas fa-play-circle" style="font-size:11px;color:var(--cyan);" aria-hidden="true"></i>
+              <span id="sidebar-total-count">0</span> درس
+            </span>
+            <span class="sidebar-stat" id="sidebar-watched-stat">
+              <i class="fas fa-check-circle" style="font-size:11px;color:var(--emerald);" aria-hidden="true"></i>
+              <span id="sidebar-watched-count">0</span> مشاهَد
+            </span>
+          </div>
+          <div class="sidebar-progress-bar-wrap">
+            <div class="sidebar-progress-bar" id="sidebarProgressBar" style="width:0%"></div>
+          </div>
+          <div class="sidebar-progress-label" id="sidebarProgressLabel">0% مكتمل</div>
+        </div>
+        <div class="sidebar-scroll" id="sidebar-scroll">
+        </div>
       </div>
+
     </div>
   </div>
 
-  <!-- VIEW: EXAMS -->
   <div id="view-exams" class="view" role="region">
     <div class="section-head">
       <h2 class="section-title" id="exams-title">مستودع <span>الامتحانات</span></h2>
@@ -1158,10 +2129,9 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
     </div>
   </div>
 
-</div><!-- /container -->
-</div><!-- /main-wrap -->
+</div>
+</div>
 
-<!-- RESUME CHIP -->
 <div class="resume-chip" id="resumeChip" role="button" tabindex="0">
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
   <span id="resumeChipText">مواصلة من حيث توقفت</span>
@@ -1171,9 +2141,6 @@ p, .card-sub, .bc-desc, .hero-sub { font-family: 'IBM Plex Sans Arabic', sans-se
 <script>
 'use strict';
 
-/* ════════════════════════════════════════════════════════
-   ▶▶  PASTE YOUR PUBLISHED CSV URL HERE  ◀◀
-   ════════════════════════════════════════════════════════ */
 const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQGUco3xJeegscl41XARwnW0KqlTs_bwa1XPtwVJ3c5MlhYOxOhgrw0y4rxvxESb3Ob1OnXivpKr1EM/pub?output=csv";
 
 const DB = { lessons: {}, exams: {} };
@@ -1214,21 +2181,215 @@ const THEME_COLORS = {
   cyan:"#06b6d4", indigo:"#6366f1", emerald:"#10b981",
   amber:"#f59e0b", rose:"#fb7185",  violet:"#a78bfa"
 };
+
 const LS_PROGRESS = 'mosta9bali_progress_v4';
 const LS_THEME    = 'mosta9bali_theme_v1';
+const LS_SESSION  = 'mosta9bali_session_v2';
+const LS_WATCHED  = 'mosta9bali_watched_v1';
 
 const APP = {
   currentView:'view-home', breadcrumbs:[], track:null, grade:null,
-  subject:null, mode:null, ambientOn:false, currentLessonPdfUrl:null, theme:'dark'
+  subject:null, mode:null, ambientOn:false, currentLessonPdfUrl:null,
+  theme:'dark',
+  playlistGradeKey: null,
+  playlistSubjectKey: null,
+  playlistSubjectLabel: null,
+  playlistCurrentLessonTitle: null
 };
 const BACK_STACK = [];
 
-/* ── THEME ENGINE ── */
+function _getWatched() {
+  try { return JSON.parse(localStorage.getItem(LS_WATCHED) || '{}'); } catch(e) { return {}; }
+}
+function _saveWatched(map) {
+  try { localStorage.setItem(LS_WATCHED, JSON.stringify(map)); } catch(e) {}
+}
+function _watchedKey(gradeKey, subjectKey, title) {
+  return `${gradeKey}||${subjectKey}||${title}`;
+}
+function isWatched(gradeKey, subjectKey, title) {
+  const map = _getWatched();
+  return !!map[_watchedKey(gradeKey, subjectKey, title)];
+}
+function markWatched(gradeKey, subjectKey, title) {
+  const map = _getWatched();
+  map[_watchedKey(gradeKey, subjectKey, title)] = Date.now();
+  _saveWatched(map);
+}
+function getWatchedCountForSubject(gradeKey, subjectKey) {
+  const map   = _getWatched();
+  const items = (DB.lessons[gradeKey] || {})[subjectKey] || [];
+  return items.filter(l => map[_watchedKey(gradeKey, subjectKey, l.title)]).length;
+}
+
+function saveSession() {
+  const session = {
+    appState: {
+      currentView:             APP.currentView,
+      breadcrumbs:             JSON.parse(JSON.stringify(APP.breadcrumbs)),
+      track:                   APP.track,
+      grade:                   APP.grade,
+      subject:                 APP.subject,
+      mode:                    APP.mode,
+      currentLessonPdfUrl:     APP.currentLessonPdfUrl,
+      playlistGradeKey:        APP.playlistGradeKey,
+      playlistSubjectKey:      APP.playlistSubjectKey,
+      playlistSubjectLabel:    APP.playlistSubjectLabel,
+      playlistCurrentLessonTitle: APP.playlistCurrentLessonTitle
+    },
+    backStack: BACK_STACK.map(entry => ({
+      view:        entry.view,
+      breadcrumbs: JSON.parse(JSON.stringify(entry.breadcrumbs)),
+      state: {
+        track:   entry.state.track,
+        grade:   entry.state.grade,
+        subject: entry.state.subject,
+        mode:    entry.state.mode,
+        currentLessonPdfUrl:  entry.state.currentLessonPdfUrl,
+        playlistGradeKey:     entry.state.playlistGradeKey,
+        playlistSubjectKey:   entry.state.playlistSubjectKey,
+        playlistSubjectLabel: entry.state.playlistSubjectLabel,
+        playlistCurrentLessonTitle: entry.state.playlistCurrentLessonTitle
+      }
+    })),
+    ts: Date.now()
+  };
+  try { localStorage.setItem(LS_SESSION, JSON.stringify(session)); } catch(e) {}
+}
+
+function loadSession() {
+  try {
+    const raw = localStorage.getItem(LS_SESSION);
+    if (!raw) return null;
+    const session = JSON.parse(raw);
+    if (Date.now() - session.ts > 7 * 24 * 60 * 60 * 1000) {
+      localStorage.removeItem(LS_SESSION);
+      return null;
+    }
+    return session;
+  } catch(e) { return null; }
+}
+
+function clearSession() {
+  try { localStorage.removeItem(LS_SESSION); } catch(e) {}
+}
+
+function restoreSession(session) {
+  if (!session) return false;
+  const s = session.appState;
+  BACK_STACK.length = 0;
+  if (session.backStack && Array.isArray(session.backStack)) {
+    session.backStack.forEach(entry => BACK_STACK.push(entry));
+  }
+  Object.assign(APP, s);
+  const view = s.currentView || 'view-home';
+  _restoreView(view, s);
+  return true;
+}
+
+function _restoreView(view, s) {
+  switch(view) {
+    case 'view-home':
+      buildHomeTracksGrid(); _activateView('view-home'); break;
+    case 'view-primary':
+      buildPrimaryGrades(); _activateView('view-primary'); break;
+    case 'view-primary-subjects':
+      if (s.grade) {
+        const gl = PRIMARY_GRADES.find(g => g.key === s.grade);
+        buildPrimarySubjects(s.grade, gl ? gl.label : s.grade);
+      }
+      _activateView('view-primary-subjects'); break;
+    case 'view-middle':
+      buildMiddleYears(); _activateView('view-middle'); break;
+    case 'view-high':
+      buildHighLevels(); _activateView('view-high'); break;
+    case 'view-binary':
+      buildBinary(s.breadcrumbs && s.breadcrumbs.length ? s.breadcrumbs[s.breadcrumbs.length - 1].label : '');
+      _activateView('view-binary'); break;
+    case 'view-track-select':
+      buildTrackSelect(); _activateView('view-track-select'); break;
+    case 'view-subjects':
+      if (s.grade && s.mode) buildSubjectsGrid(s.grade, s.mode);
+      _activateView('view-subjects'); break;
+    case 'view-lessons': {
+      const gradeData = (DB.lessons[s.grade] || {});
+      const items = s.subject ? (gradeData[s.subject] || []) : [];
+      const meta  = s.subject ? SUBJECT_META[s.subject] : null;
+      buildLessonsList(meta ? meta.label : (s.subject || ''), items);
+      _activateView('view-lessons'); break;
+    }
+    case 'view-playlist': {
+      if (s.playlistGradeKey && s.playlistSubjectKey && s.playlistCurrentLessonTitle) {
+        const items = (DB.lessons[s.playlistGradeKey] || {})[s.playlistSubjectKey] || [];
+        const lessonObj = items.find(l => l.title === s.playlistCurrentLessonTitle);
+        if (lessonObj) buildPlaylist(lessonObj);
+        else if (items.length > 0) buildPlaylist(items[0]);
+      }
+      _activateView('view-playlist'); break;
+    }
+    case 'view-exams': {
+      const gradeExams = (DB.exams[s.grade] || {});
+      const exItems    = s.subject ? (gradeExams[s.subject] || []) : [];
+      const exMeta     = s.subject ? SUBJECT_META[s.subject] : null;
+      buildPdfGrid(exMeta ? exMeta.label : (s.subject || ''), exItems);
+      _activateView('view-exams'); break;
+    }
+    default:
+      buildHomeTracksGrid(); _activateView('view-home');
+  }
+  renderBreadcrumb();
+}
+
+function _activateView(id) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  const el = document.getElementById(id);
+  if (el) { el.classList.add('active'); APP.currentView = id; }
+  window.scrollTo({ top: 68, behavior: 'smooth' });
+}
+
+let _menuOpen = false;
+function toggleMobileMenu() { _menuOpen ? closeMobileMenu() : openMobileMenu(); }
+function openMobileMenu() {
+  _menuOpen = true;
+  const btn  = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.classList.add('open');
+  btn.setAttribute('aria-expanded', 'true');
+  menu.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  updateMobileThemeButtons();
+}
+function closeMobileMenu() {
+  _menuOpen = false;
+  const btn  = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.classList.remove('open');
+  btn.setAttribute('aria-expanded', 'false');
+  menu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function updateMobileThemeButtons() {
+  const isLight = APP.theme === 'light';
+  const sunBtn  = document.getElementById('mobBtnSun');
+  const moonBtn = document.getElementById('mobBtnMoon');
+  if (sunBtn)  sunBtn.classList.toggle('light-active', isLight);
+  if (moonBtn) moonBtn.classList.toggle('dark-active', !isLight);
+}
+
+document.addEventListener('click', function(e) {
+  if (!_menuOpen) return;
+  const menu = document.getElementById('mobileMenu');
+  const btn  = document.getElementById('hamburgerBtn');
+  if (menu && !menu.contains(e.target) && btn && !btn.contains(e.target)) closeMobileMenu();
+});
+document.querySelector('.nav-logo').addEventListener('click', () => { if (_menuOpen) closeMobileMenu(); });
+
 function setTheme(mode) {
   APP.theme = mode;
   try { localStorage.setItem(LS_THEME, mode); } catch(e) {}
   document.body.classList.toggle('light-mode', mode === 'light');
   updateThemeButtons();
+  updateMobileThemeButtons();
 }
 function updateThemeButtons() {
   document.getElementById('btnSun')?.classList.toggle('is-active', APP.theme === 'light');
@@ -1241,14 +2402,12 @@ function loadSavedTheme() {
   } catch(e) { setTheme('dark'); }
 }
 
-/* ── HAPTIC FEEDBACK (mobile) ── */
 function haptic(type = 'light') {
   if (!navigator.vibrate) return;
   const patterns = { light:20, medium:40, heavy:70 };
   navigator.vibrate(patterns[type] || 20);
 }
 
-/* ── CSV FETCH & PARSE ── */
 async function fetchData() {
   if (SHEET_URL === "YOUR_GOOGLE_SHEETS_CSV_URL_HERE") {
     showError("لم يتم تعيين رابط Google Sheets بعد.");
@@ -1260,26 +2419,34 @@ async function fetchData() {
     const raw = await res.text();
     parseCSV(raw);
     updateStats();
-    hideLoader();
-    checkResume();
+    const session = loadSession();
+    if (session) {
+      restoreSession(session);
+      hideLoaderDirect();
+    } else {
+      hideLoader();
+      checkResume();
+    }
   } catch(e) {
     console.error('[Mosta9bali]', e);
     showError(`فشل الاتصال بـ Google Sheets: ${e.message}`);
-    hideLoader();
+    hideLoaderDirect();
   }
 }
+
 function parseCSV(raw) {
   DB.lessons = {}; DB.exams = {};
   const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
   if (lines.length < 2) return;
   const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase().replace(/"/g,''));
   const idx = {
-    type:      headers.indexOf('type'),
-    level:     headers.indexOf('level'),
-    subject:   headers.indexOf('subject'),
-    title:     headers.indexOf('title'),
-    video_url: headers.indexOf('video_url'),
-    pdf_url:   headers.indexOf('pdf_url')
+    type:         headers.indexOf('type'),
+    level:        headers.indexOf('level'),
+    subject:      headers.indexOf('subject'),
+    title:        headers.indexOf('title'),
+    video_url:    headers.indexOf('video_url'),
+    pdf_url:      headers.indexOf('pdf_url'),
+    lesson_group: headers.indexOf('lesson_group')
   };
   if (idx.type < 0 || idx.level < 0 || idx.subject < 0 || idx.title < 0) {
     showError('أعمدة الـ CSV غير صحيحة. تأكد من أسماء الأعمدة: type, level, subject, title, video_url, pdf_url');
@@ -1291,20 +2458,22 @@ function parseCSV(raw) {
     const level   = cols[idx.level]  || '';
     const subject = cols[idx.subject]|| '';
     const title   = cols[idx.title]  || '';
-    const videoUrl = idx.video_url >= 0 ? (cols[idx.video_url]||'') : '';
-    const pdfUrl   = idx.pdf_url   >= 0 ? (cols[idx.pdf_url]  ||'') : '';
+    const videoUrl     = idx.video_url    >= 0 ? (cols[idx.video_url]   ||'') : '';
+    const pdfUrl       = idx.pdf_url      >= 0 ? (cols[idx.pdf_url]     ||'') : '';
+    const lessonGroup  = idx.lesson_group >= 0 ? (cols[idx.lesson_group]||'') : '';
     if (!type || !level || !subject || !title) continue;
     if (type === 'درس') {
       if (!DB.lessons[level]) DB.lessons[level] = {};
       if (!DB.lessons[level][subject]) DB.lessons[level][subject] = [];
-      DB.lessons[level][subject].push({ title, videoUrl, pdfUrl });
+      DB.lessons[level][subject].push({ title, videoUrl, pdfUrl, lessonGroup });
     } else if (type === 'امتحان') {
       if (!DB.exams[level]) DB.exams[level] = {};
       if (!DB.exams[level][subject]) DB.exams[level][subject] = [];
-      DB.exams[level][subject].push({ title, pdfUrl });
+      DB.exams[level][subject].push({ title, pdfUrl, lessonGroup });
     }
   }
 }
+
 function parseCSVLine(line) {
   const result = []; let cur = '', inQ = false;
   for (let i = 0; i < line.length; i++) {
@@ -1316,13 +2485,17 @@ function parseCSVLine(line) {
   result.push(cur); return result;
 }
 
-/* ── LOADER / ERROR ── */
 function hideLoader() {
   const loader = document.getElementById('globalLoader');
   loader.classList.add('hidden');
   setTimeout(() => { loader.style.display = 'none'; }, 600);
   document.getElementById('view-home').classList.add('active');
   APP.currentView = 'view-home';
+}
+function hideLoaderDirect() {
+  const loader = document.getElementById('globalLoader');
+  loader.classList.add('hidden');
+  setTimeout(() => { loader.style.display = 'none'; }, 600);
 }
 function showError(msg) {
   document.getElementById('errorText').textContent = msg;
@@ -1335,7 +2508,6 @@ function updateStats() {
   let lessons = 0, exams = 0;
   Object.values(DB.lessons).forEach(lvl => Object.values(lvl).forEach(a => lessons += a.length));
   Object.values(DB.exams).forEach(lvl   => Object.values(lvl).forEach(a => exams   += a.length));
-  // Animate counter
   animateCount('stat-lessons', lessons);
   animateCount('stat-exams', exams);
 }
@@ -1350,7 +2522,6 @@ function animateCount(id, target) {
   }, 50);
 }
 
-/* ── VIEW ENGINE ── */
 function showSkeleton() { document.getElementById('skeleton-loader').classList.add('active'); }
 function hideSkeleton()  { document.getElementById('skeleton-loader').classList.remove('active'); }
 function showView(id) {
@@ -1362,10 +2533,10 @@ function showView(id) {
     APP.currentView = id;
     renderBreadcrumb();
     window.scrollTo({ top: 68, behavior: 'smooth' });
+    saveSession();
   }, 180);
 }
 
-/* ── BREADCRUMB ENGINE ── */
 function renderBreadcrumb() {
   const bar = document.getElementById('breadcrumbBar');
   if (!APP.breadcrumbs.length) { bar.style.display = 'none'; return; }
@@ -1388,13 +2559,19 @@ function pushBC(label) { APP.breadcrumbs.push({ label }); }
 function goHome() {
   Object.assign(APP, {
     breadcrumbs:[], track:null, grade:null, subject:null,
-    mode:null, ambientOn:false, currentLessonPdfUrl:null
+    mode:null, ambientOn:false, currentLessonPdfUrl:null,
+    playlistGradeKey:null, playlistSubjectKey:null,
+    playlistSubjectLabel:null, playlistCurrentLessonTitle:null
   });
   BACK_STACK.length = 0;
   document.getElementById('ambientOverlay').classList.remove('active');
-  document.getElementById('ambientToggle').classList.remove('on');
+  const ambToggle = document.getElementById('ambientToggle');
+  if (ambToggle) { ambToggle.classList.remove('on'); ambToggle.setAttribute('aria-pressed','false'); }
   document.getElementById('yt-player').src = '';
   document.getElementById('pdf-viewer-container').classList.remove('open');
+  if (_menuOpen) closeMobileMenu();
+  if (document.fullscreenElement || document.webkitFullscreenElement) _exitFullscreenAPI();
+  clearSession();
   updateStats();
   showView('view-home');
 }
@@ -1409,6 +2586,7 @@ function goBack() {
   APP.currentView = prev.view;
   renderBreadcrumb();
   window.scrollTo({ top: 68, behavior: 'smooth' });
+  saveSession();
 }
 function bcNav(idx) {
   const stepsBack = APP.breadcrumbs.length - 1 - idx;
@@ -1416,16 +2594,27 @@ function bcNav(idx) {
 }
 function navigate(target, ...args) {
   haptic('light');
+  if (_menuOpen) closeMobileMenu();
   BACK_STACK.push({
     view: APP.currentView,
     breadcrumbs: JSON.parse(JSON.stringify(APP.breadcrumbs)),
-    state: { ...APP, breadcrumbs: undefined }
+    state: {
+      track:   APP.track,
+      grade:   APP.grade,
+      subject: APP.subject,
+      mode:    APP.mode,
+      currentLessonPdfUrl:     APP.currentLessonPdfUrl,
+      playlistGradeKey:        APP.playlistGradeKey,
+      playlistSubjectKey:      APP.playlistSubjectKey,
+      playlistSubjectLabel:    APP.playlistSubjectLabel,
+      playlistCurrentLessonTitle: APP.playlistCurrentLessonTitle
+    }
   });
   _navTo(target, ...args);
   setTimeout(saveProgress, 300);
+  setTimeout(saveSession,  300);
 }
 
-/* ── NAVIGATION ROUTER ── */
 function _navTo(target, ...args) {
   switch(target) {
     case 'primary':
@@ -1486,7 +2675,6 @@ function _navTo(target, ...args) {
   }
 }
 
-/* ── SVG NUMBER ICON ── */
 function numIcon(num, theme) {
   const c = THEME_COLORS[theme] || THEME_COLORS.cyan;
   return `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
@@ -1495,7 +2683,6 @@ function numIcon(num, theme) {
   </svg>`;
 }
 
-/* ── COMING SOON ── */
 function comingSoonCard(msg = 'لم يتم إضافة محتوى بعد') {
   return `<div class="coming-soon-card" role="status">
     <div class="cs-icon"><i class="fas fa-hourglass-half" aria-hidden="true"></i></div>
@@ -1505,7 +2692,6 @@ function comingSoonCard(msg = 'لم يتم إضافة محتوى بعد') {
   </div>`;
 }
 
-/* ── HOME TRACKS GRID ── */
 function buildHomeTracksGrid() {
   const tracks = [
     { id:'primary', theme:'cyan',    badge:'badge-cyan',    badgeText:'6 مستويات',
@@ -1648,23 +2834,77 @@ function buildSubjectsGrid(gradeKey, mode) {
 function buildLessonsList(subjectLabel, lessons) {
   const titleEl = document.getElementById('lessons-title');
   if (titleEl) titleEl.innerHTML = `دروس <span>${subjectLabel}</span>`;
-  const el = document.getElementById('lessons-list'); if (!el) return;
-  if (!lessons.length) { el.innerHTML = comingSoonCard('لا توجد دروس. أضفها عبر Google Sheets.'); return; }
-  el.innerHTML = lessons.map((l, i) => {
-    const safe = JSON.stringify(l).replace(/'/g,"&#39;").replace(/"/g,'&quot;');
-    return `<div class="lesson-row" onclick='_lessonClick(this)' data-lesson="${safe}" role="listitem" tabindex="0" aria-label="${l.title}">
-      <div class="lesson-num" aria-hidden="true">${String(i+1).padStart(2,'0')}</div>
-      <div style="flex:1">
-        <div class="lesson-title">${l.title}</div>
-        <div class="lesson-meta">
-          <i class="fas fa-play-circle" style="font-size:11px;color:var(--cyan)" aria-hidden="true"></i>
-          ${l.videoUrl ? 'شرح متاح' : 'قيد الإضافة'}
-          ${l.pdfUrl ? ' &nbsp;·&nbsp; <i class="fas fa-file-pdf" style="font-size:10px;color:var(--rose)"></i> PDF' : ''}
+  const flatEl    = document.getElementById('lessons-list');
+  const groupedEl = document.getElementById('lessons-grouped-container');
+  flatEl.innerHTML    = '';
+  groupedEl.innerHTML = '';
+  flatEl.style.display    = '';
+  groupedEl.style.display = 'none';
+  if (!lessons.length) {
+    flatEl.innerHTML = comingSoonCard('لا توجد دروس. أضفها عبر Google Sheets.');
+    return;
+  }
+  const hasGroups = lessons.some(l => l.lessonGroup && l.lessonGroup.trim() !== '');
+  if (hasGroups) {
+    flatEl.style.display    = 'none';
+    groupedEl.style.display = '';
+    const groupOrder = [];
+    const groupMap   = {};
+    lessons.forEach(l => {
+      const grp = (l.lessonGroup && l.lessonGroup.trim()) ? l.lessonGroup.trim() : 'دروس أخرى';
+      if (!groupMap[grp]) { groupMap[grp] = []; groupOrder.push(grp); }
+      groupMap[grp].push(l);
+    });
+    groupedEl.innerHTML = groupOrder.map((grpName, grpIdx) => {
+      const grpLessons = groupMap[grpName];
+      const numLabel   = String(grpIdx + 1).padStart(2, '0');
+      const rowsHTML = grpLessons.map((l, i) => {
+        const safe = JSON.stringify(l).replace(/'/g,"&#39;").replace(/"/g,'&quot;');
+        return `<div class="lesson-row" onclick='_lessonClick(this)' data-lesson="${safe}" role="listitem" tabindex="0" aria-label="${l.title}">
+          <div class="lesson-num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</div>
+          <div style="flex:1;min-width:0">
+            <div class="lesson-title">${l.title}</div>
+            <div class="lesson-meta">
+              <i class="fas fa-play-circle" style="font-size:11px;color:var(--cyan)" aria-hidden="true"></i>
+              ${l.videoUrl ? 'شرح متاح' : 'قيد الإضافة'}
+              ${l.pdfUrl ? ' &nbsp;·&nbsp; <i class="fas fa-file-pdf" style="font-size:10px;color:var(--rose)"></i> PDF' : ''}
+            </div>
+          </div>
+          <i class="fas fa-chevron-left lesson-chevron" aria-hidden="true"></i>
+        </div>`;
+      }).join('');
+      return `
+        <div class="lesson-group-section" role="group" aria-label="${grpName}">
+          <div class="lesson-group-header">
+            <div class="lesson-group-num" aria-hidden="true">${numLabel}</div>
+            <div class="lesson-group-name">${grpName}</div>
+            <div class="lesson-group-count">
+              <i class="fas fa-play-circle" aria-hidden="true"></i>
+              ${grpLessons.length} ${grpLessons.length === 1 ? 'درس' : 'دروس'}
+            </div>
+          </div>
+          <div class="lesson-group-rows" role="list">
+            ${rowsHTML}
+          </div>
+        </div>`;
+    }).join('');
+  } else {
+    flatEl.innerHTML = lessons.map((l, i) => {
+      const safe = JSON.stringify(l).replace(/'/g,"&#39;").replace(/"/g,'&quot;');
+      return `<div class="lesson-row" onclick='_lessonClick(this)' data-lesson="${safe}" role="listitem" tabindex="0" aria-label="${l.title}">
+        <div class="lesson-num" aria-hidden="true">${String(i+1).padStart(2,'0')}</div>
+        <div style="flex:1;min-width:0">
+          <div class="lesson-title">${l.title}</div>
+          <div class="lesson-meta">
+            <i class="fas fa-play-circle" style="font-size:11px;color:var(--cyan)" aria-hidden="true"></i>
+            ${l.videoUrl ? 'شرح متاح' : 'قيد الإضافة'}
+            ${l.pdfUrl ? ' &nbsp;·&nbsp; <i class="fas fa-file-pdf" style="font-size:10px;color:var(--rose)"></i> PDF' : ''}
+          </div>
         </div>
-      </div>
-      <i class="fas fa-chevron-left lesson-chevron" aria-hidden="true"></i>
-    </div>`;
-  }).join('');
+        <i class="fas fa-chevron-left lesson-chevron" aria-hidden="true"></i>
+      </div>`;
+    }).join('');
+  }
 }
 
 function _lessonClick(el) {
@@ -1675,6 +2915,15 @@ function _lessonClick(el) {
 }
 
 function buildPlaylist(lessonObj) {
+  const gradeKey   = APP.grade   || APP.playlistGradeKey;
+  const subjectKey = APP.subject || APP.playlistSubjectKey;
+  const subjectMeta = subjectKey ? SUBJECT_META[subjectKey] : null;
+  const subjectLabel = APP.playlistSubjectLabel || (subjectMeta ? subjectMeta.label : 'المادة');
+  APP.playlistGradeKey        = gradeKey;
+  APP.playlistSubjectKey      = subjectKey;
+  APP.playlistSubjectLabel    = subjectLabel;
+  APP.playlistCurrentLessonTitle = lessonObj.title;
+  if (gradeKey && subjectKey) markWatched(gradeKey, subjectKey, lessonObj.title);
   const titleEl = document.getElementById('playlist-title');
   if (titleEl) titleEl.innerHTML = `شرح: <span>${lessonObj.title}</span>`;
   const pdfBtn = document.getElementById('pdfDlBtn');
@@ -1682,32 +2931,133 @@ function buildPlaylist(lessonObj) {
     pdfBtn.onclick = lessonObj.pdfUrl ? () => window.open(lessonObj.pdfUrl,'_blank') : () => alert('لا يوجد ملف PDF لهذا الدرس بعد');
     pdfBtn.style.opacity = lessonObj.pdfUrl ? '1' : '0.5';
   }
-  const listEl = document.getElementById('video-list'); if (!listEl) return;
-  if (!lessonObj.videoUrl) {
-    listEl.innerHTML = `<div style="padding:22px;text-align:center;color:var(--text-3);font-size:13px">
-      <i class="fas fa-hourglass-half" style="font-size:26px;margin-bottom:12px;display:block;color:var(--indigo)"></i>
-      الفيديو قيد الإضافة
-    </div>`;
+  if (lessonObj.videoUrl) {
+    const ytId = extractYtId(lessonObj.videoUrl);
+    const src  = ytId ? `https://www.youtube.com/embed/${ytId}?rel=0&modestbranding=1` : lessonObj.videoUrl;
+    document.getElementById('yt-player').src = src;
+  } else {
     document.getElementById('yt-player').src = '';
-    document.getElementById('nowPlayingLabel').textContent = '';
+  }
+  document.getElementById('nowPlayingLabel').textContent = lessonObj.title;
+  _buildSidebarSyllabus(gradeKey, subjectKey, subjectLabel, lessonObj.title);
+}
+
+function _buildSidebarSyllabus(gradeKey, subjectKey, subjectLabel, currentTitle) {
+  const allLessons = (gradeKey && subjectKey) ? ((DB.lessons[gradeKey] || {})[subjectKey] || []) : [];
+  const totalCount = allLessons.length;
+  const sidebarTitleEl = document.getElementById('sidebar-subject-title');
+  if (sidebarTitleEl) sidebarTitleEl.textContent = subjectLabel || 'محتوى المادة';
+  const totalEl = document.getElementById('sidebar-total-count');
+  if (totalEl) totalEl.textContent = totalCount;
+  const watchedCount = gradeKey && subjectKey ? getWatchedCountForSubject(gradeKey, subjectKey) : 0;
+  const watchedEl    = document.getElementById('sidebar-watched-count');
+  if (watchedEl) watchedEl.textContent = watchedCount;
+  const pct = totalCount > 0 ? Math.round((watchedCount / totalCount) * 100) : 0;
+  const progressBar   = document.getElementById('sidebarProgressBar');
+  const progressLabel = document.getElementById('sidebarProgressLabel');
+  if (progressBar)   progressBar.style.width = pct + '%';
+  if (progressLabel) progressLabel.textContent = pct + '% مكتمل';
+  const scrollEl = document.getElementById('sidebar-scroll');
+  if (!scrollEl) return;
+  if (!allLessons.length) {
+    scrollEl.innerHTML = `<div style="padding:24px;text-align:center;color:var(--text-3);font-size:13px">
+      <i class="fas fa-hourglass-half" style="font-size:26px;margin-bottom:12px;display:block;color:var(--indigo)"></i>
+      لا توجد دروس متاحة بعد
+    </div>`;
     return;
   }
-  const ytId = extractYtId(lessonObj.videoUrl);
-  listEl.innerHTML = `
-    <div class="video-item selected" role="listitem" tabindex="0" aria-label="${lessonObj.title}">
-      <div class="vi-thumb">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <polygon points="5 3 19 12 5 21 5 3" fill="rgba(6,182,212,0.28)" stroke="var(--cyan)"/>
-        </svg>
-      </div>
-      <div style="flex:1;overflow:hidden">
-        <div class="vi-title">${lessonObj.title}</div>
-        <div class="vi-teacher">مُضاف من Google Sheets</div>
-      </div>
-    </div>`;
-  const src = ytId ? `https://www.youtube.com/embed/${ytId}?rel=0&modestbranding=1` : lessonObj.videoUrl;
-  document.getElementById('yt-player').src = src;
+  const hasGroups = allLessons.some(l => l.lessonGroup && l.lessonGroup.trim() !== '');
+  let html = '';
+  if (hasGroups) {
+    const groupOrder = [];
+    const groupMap   = {};
+    allLessons.forEach(l => {
+      const grp = (l.lessonGroup && l.lessonGroup.trim()) ? l.lessonGroup.trim() : 'دروس أخرى';
+      if (!groupMap[grp]) { groupMap[grp] = []; groupOrder.push(grp); }
+      groupMap[grp].push(l);
+    });
+    groupOrder.forEach((grpName, grpIdx) => {
+      const grpLessons = groupMap[grpName];
+      const numLabel   = String(grpIdx + 1).padStart(2, '0');
+      html += `<div class="sidebar-group-header" role="heading" aria-level="3">
+        <div class="sidebar-group-num" aria-hidden="true">${numLabel}</div>
+        <div class="sidebar-group-name">${grpName}</div>
+        <div class="sidebar-group-count-badge">${grpLessons.length} درس</div>
+      </div>`;
+      grpLessons.forEach(l => { html += _buildSidebarItem(l, gradeKey, subjectKey, currentTitle); });
+    });
+  } else {
+    allLessons.forEach(l => { html += _buildSidebarItem(l, gradeKey, subjectKey, currentTitle); });
+  }
+  scrollEl.innerHTML = html;
+  requestAnimationFrame(() => {
+    const playing = scrollEl.querySelector('.sidebar-video-item.playing');
+    if (playing) playing.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+}
+
+function _buildSidebarItem(l, gradeKey, subjectKey, currentTitle) {
+  const isPlaying = l.title === currentTitle;
+  const watched   = gradeKey && subjectKey ? isWatched(gradeKey, subjectKey, l.title) : false;
+  let classes = 'sidebar-video-item';
+  if (isPlaying) classes += ' playing';
+  if (watched)   classes += ' watched';
+  const hasVideo = !!l.videoUrl;
+  const iconHTML = isPlaying
+    ? `<div class="svi-equalizer" aria-hidden="true"><span></span><span></span><span></span></div>`
+    : (hasVideo
+        ? `<i class="fas fa-play" style="font-size:10px;" aria-hidden="true"></i>`
+        : `<i class="fas fa-clock" style="font-size:10px;color:var(--text-3);" aria-hidden="true"></i>`);
+  const safe = JSON.stringify(l).replace(/'/g,"&#39;").replace(/"/g,'&quot;');
+  return `<div class="${classes}" onclick='_sidebarItemClick(this)' data-lesson="${safe}" role="listitem" tabindex="0" aria-label="${l.title}${isPlaying?' — يُشغَّل الآن':''}${watched?' — تمت المشاهدة':''}">
+    <div class="svi-icon-wrap" aria-hidden="true">${iconHTML}</div>
+    <div class="svi-content">
+      <div class="svi-title">${l.title}</div>
+      ${isPlaying
+        ? `<div class="svi-playing-label"><div class="svi-equalizer" aria-hidden="true"><span></span><span></span><span></span></div> يُشغَّل الآن</div>`
+        : `<div class="svi-meta"><i class="fas fa-${hasVideo ? 'play-circle' : 'clock'}" style="font-size:10px" aria-hidden="true"></i>${hasVideo ? 'شرح متاح' : 'قيد الإضافة'}${l.pdfUrl ? ' &nbsp;·&nbsp; PDF' : ''}</div>`}
+    </div>
+    <div class="svi-watched-badge" aria-label="${watched ? 'تمت المشاهدة' : ''}">
+      <i class="fas fa-check" aria-hidden="true"></i>
+    </div>
+  </div>`;
+}
+
+function _sidebarItemClick(el) {
+  try {
+    const raw = el.getAttribute('data-lesson').replace(/&quot;/g,'"').replace(/&#39;/g,"'");
+    const lessonObj = JSON.parse(raw);
+    haptic('light');
+    _switchVideo(lessonObj);
+  } catch(e) { console.error('sidebar item click error', e); }
+}
+
+function _switchVideo(lessonObj) {
+  const gradeKey   = APP.playlistGradeKey;
+  const subjectKey = APP.playlistSubjectKey;
+  if (gradeKey && subjectKey) markWatched(gradeKey, subjectKey, lessonObj.title);
+  APP.playlistCurrentLessonTitle = lessonObj.title;
+  APP.currentLessonPdfUrl        = lessonObj.pdfUrl || null;
+  const titleEl = document.getElementById('playlist-title');
+  if (titleEl) titleEl.innerHTML = `شرح: <span>${lessonObj.title}</span>`;
+  const pdfBtn = document.getElementById('pdfDlBtn');
+  if (pdfBtn) {
+    pdfBtn.onclick = lessonObj.pdfUrl ? () => window.open(lessonObj.pdfUrl,'_blank') : () => alert('لا يوجد ملف PDF لهذا الدرس بعد');
+    pdfBtn.style.opacity = lessonObj.pdfUrl ? '1' : '0.5';
+  }
+  if (lessonObj.videoUrl) {
+    const ytId = extractYtId(lessonObj.videoUrl);
+    const src  = ytId ? `https://www.youtube.com/embed/${ytId}?rel=0&modestbranding=1` : lessonObj.videoUrl;
+    document.getElementById('yt-player').src = src;
+  } else {
+    document.getElementById('yt-player').src = '';
+  }
   document.getElementById('nowPlayingLabel').textContent = lessonObj.title;
+  _buildSidebarSyllabus(gradeKey, subjectKey, APP.playlistSubjectLabel, lessonObj.title);
+  saveSession();
+  saveProgress();
+  const playerShell = document.querySelector('.cinema-player-shell');
+  if (playerShell) playerShell.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function extractYtId(url) {
@@ -1737,7 +3087,7 @@ function buildPdfGrid(subjectLabel, exams) {
             <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
           </svg>
         </div>
-        <div>
+        <div style="min-width:0;flex:1">
           <div class="pdf-title">${exam.title}</div>
           <div class="pdf-meta">
             <span>${subjectLabel}</span>
@@ -1769,17 +3119,47 @@ function closePdfViewer() {
   document.getElementById('pdf-viewer-frame').src = '';
 }
 
-/* ── AMBIENT MODE ── */
-function toggleAmbient() {
-  APP.ambientOn = !APP.ambientOn;
-  document.getElementById('ambientOverlay').classList.toggle('active', APP.ambientOn);
-  document.getElementById('ambientToggle').classList.toggle('on', APP.ambientOn);
-  const wrap = document.getElementById('playerWrap');
-  if (wrap) wrap.style.zIndex = APP.ambientOn ? '901' : '';
-  haptic('light');
+/* ══════════════════════════════════════════════════════════════════════════
+   FOCUS MODE — True Fullscreen API
+   ══════════════════════════════════════════════════════════════════════════ */
+let _focusActive = false;
+
+function _enterFullscreenAPI() {
+  const box = document.getElementById('playerRatioBox');
+  if (!box) return;
+  const fn = box.requestFullscreen || box.webkitRequestFullscreen || box.mozRequestFullScreen || box.msRequestFullscreen;
+  if (fn) fn.call(box).catch(err => console.warn('[Focus Mode] Fullscreen request failed:', err));
+}
+function _exitFullscreenAPI() {
+  const fn = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
+  if (fn) fn.call(document).catch(err => console.warn('[Focus Mode] Exit fullscreen failed:', err));
+}
+function toggleFocusMode() {
+  haptic('medium');
+  if (_focusActive) _exitFullscreenAPI();
+  else _enterFullscreenAPI();
+}
+function toggleAmbient() { toggleFocusMode(); }
+function exitFocusMode() { _exitFullscreenAPI(); }
+
+function _onFullscreenChange() {
+  const isFS = !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+  _focusActive = isFS;
+  const box       = document.getElementById('playerRatioBox');
+  const toggleBtn = document.getElementById('ambientToggle');
+  if (box)       box.classList.toggle('in-focus', isFS);
+  if (toggleBtn) {
+    toggleBtn.classList.toggle('on', isFS);
+    toggleBtn.setAttribute('aria-pressed', String(isFS));
+  }
+  APP.ambientOn = isFS;
 }
 
-/* ── RESUME CHIP ── */
+document.addEventListener('fullscreenchange',       _onFullscreenChange);
+document.addEventListener('webkitfullscreenchange', _onFullscreenChange);
+document.addEventListener('mozfullscreenchange',    _onFullscreenChange);
+document.addEventListener('MSFullscreenChange',     _onFullscreenChange);
+
 function saveProgress() {
   const data = { label: APP.breadcrumbs.length ? APP.breadcrumbs[APP.breadcrumbs.length-1].label : null, ts: Date.now() };
   try { localStorage.setItem(LS_PROGRESS, JSON.stringify(data)); } catch(e) {}
@@ -1799,7 +3179,6 @@ function dismissResumeChip(e) {
   try { localStorage.removeItem(LS_PROGRESS); } catch(e) {}
 }
 
-/* ── NAVBAR SCROLL ── */
 let lastScrollY = 0;
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
@@ -1807,20 +3186,21 @@ window.addEventListener('scroll', () => {
   lastScrollY = y;
 }, { passive: true });
 
-/* ── KEYBOARD ACCESSIBILITY ── */
 document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    if (_menuOpen) { closeMobileMenu(); return; }
+    closePdfViewer();
+  }
   if (e.key === 'Enter' || e.key === ' ') {
     const el = e.target;
-    const clickable = ['track-card','binary-card','lesson-row','video-item','back-btn','bc-item','open-pdf-btn','dl-btn','subj-pill'];
+    const clickable = ['track-card','binary-card','lesson-row','video-item','back-btn','bc-item','open-pdf-btn','cinema-dl-pill','subj-pill','sidebar-video-item','cinema-ambient-btn'];
     if (clickable.some(cls => el.classList.contains(cls))) { e.preventDefault(); el.click(); }
   }
-  if (e.key === 'Escape') { if (APP.ambientOn) toggleAmbient(); closePdfViewer(); }
   if (e.key === 'Backspace' && !['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)) {
     if (BACK_STACK.length) goBack();
   }
 });
 
-/* ── TOUCH RIPPLE EFFECT ── */
 function addRipple(el, e) {
   const rect = el.getBoundingClientRect();
   const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
@@ -1846,19 +3226,17 @@ if (!document.getElementById('rippleStyle')) {
   document.head.appendChild(s);
 }
 document.addEventListener('click', e => {
-  const rippleTargets = ['.track-card','.binary-card','.lesson-row','.pdf-card','.dl-btn','.open-pdf-btn','.back-btn','.subj-pill'];
+  const rippleTargets = ['.track-card','.binary-card','.lesson-row','.pdf-card','.cinema-dl-pill','.open-pdf-btn','.back-btn','.subj-pill','.sidebar-video-item'];
   const target = e.target.closest(rippleTargets.join(','));
   if (target) addRipple(target, e);
 });
 
-/* ── RESUME CHIP EVENTS ── */
 document.getElementById('resumeChip').addEventListener('click', function(e) {
   if (e.target.closest('#resumeClose')) { dismissResumeChip(e); return; }
   this.classList.remove('show');
 });
 document.getElementById('resumeClose').addEventListener('click', dismissResumeChip);
 
-/* ── INIT ── */
 function initApp() {
   hideError();
   document.getElementById('globalLoader').style.display = '';
@@ -1867,7 +3245,8 @@ function initApp() {
   buildHomeTracksGrid();
   fetchData();
 }
-document.addEventListener('DOMContentLoaded', initApp);
+
+window.onload = initApp;
 </script>
 </body>
 </html>
